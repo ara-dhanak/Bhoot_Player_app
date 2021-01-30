@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "E:\\Flutter_Project\\Bhoot_player_app\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-night-v8\\values-night-v8.xml",
+            "outputFile": "E:\\Bhoot_Player_app\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-night-v8\\values-night-v8.xml",
             "map": [
                 {
-                    "source": "E:\\Flutter_Project\\Bhoot_player_app\\android\\app\\src\\main\\res\\values-night\\styles.xml",
+                    "source": "E:\\Bhoot_Player_app\\android\\app\\src\\main\\res\\values-night\\styles.xml",
                     "from": {
                         "startLines": "3,14",
                         "startColumns": "4,4",
