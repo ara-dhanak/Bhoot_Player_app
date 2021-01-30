@@ -2,3 +2,4 @@
 build*
 ios*
 .dart*
+.idea/workspace.xml
