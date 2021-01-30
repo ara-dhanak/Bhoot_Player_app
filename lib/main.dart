@@ -8,7 +8,7 @@ void main() => runApp(new MaterialApp(
     //home: bhoot_bottom_nav()),
   debugShowCheckedModeBanner: false,
   home: bhoot_bottom_nav())
-
+//my test chinu
 );
 
 
