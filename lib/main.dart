@@ -1,5 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_app/bhoot_page2.dart';
+import 'bhoot_page2.dart';
 
 void main() => runApp(new MaterialApp(
  // home: ScaffoldExample())
