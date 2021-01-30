@@ -1,4 +1,4 @@
-.idea
-.dart_tool
-build
-ios
+.idea/*
+.dart_tool/*
+build/*
+ios/*
