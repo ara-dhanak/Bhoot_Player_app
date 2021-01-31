@@ -1,5 +1,8 @@
 .ide*
 build*
 ios*
-.dart*
+.dart_tool/*
 .idea/workspace.xml
+.packa*
+.flutter-plugins
+.flutter-plugins-dependencies

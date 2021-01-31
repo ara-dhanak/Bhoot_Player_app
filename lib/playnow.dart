@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
-class playnow extends StatefulWidget {
+import 'AbstractClassFactory.dart';
+
+class playnow extends StatefulWidget implements AbstractPage {
   @override
   _playnowState createState() => _playnowState();
+
+  void BuildPage() {
+
+  }
 }
 
 class _playnowState extends State<playnow> {
@@ -9,8 +15,8 @@ class _playnowState extends State<playnow> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-        title: Text(" Game is On! Keep Playing!!!:"),
-    backgroundColor: Colors.cyanAccent.shade400
+            title: Text(" Game is On! Keep Playing!!!:"),
+            backgroundColor: Colors.cyanAccent.shade400
         )
     );
   }
