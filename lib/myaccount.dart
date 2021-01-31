@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
+import 'AbstractClassFactory.dart';
 
-
-class myaccount  extends StatefulWidget {
+class myaccount extends StatefulWidget implements AbstractPage {
   @override
   _myaccountState createState() => _myaccountState();
+
+  void BuildPage() {
+
+  }
 }
 
 class _myaccountState extends State<myaccount> {

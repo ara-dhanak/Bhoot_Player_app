@@ -8,33 +8,32 @@ class bhoot_bottom_nav extends StatefulWidget {
 
 class _bhoot_bottom_navState extends State<bhoot_bottom_nav> {
   @override
-
-
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
           title: Text("Bhootnath Demo Page for buttons"),
         ),
-        bottomNavigationBar: BottomNavigationBar(type: BottomNavigationBarType.fixed,
+        bottomNavigationBar: BottomNavigationBar(
+            type: BottomNavigationBarType.fixed,
             items: [
-          BottomNavigationBarItem(
-              icon: Icon(Icons.play_arrow),
-              backgroundColor: Colors.blueAccent,
-              label: "Play Now"),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.history),
-              backgroundColor: Colors.blueAccent,
-              label: "Game History"),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.card_giftcard),
-              backgroundColor: Colors.blueAccent,
-              label: " Winning History"),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.person_pin_rounded),
-              backgroundColor: Colors.blueAccent,
-              label: "MyAccount")
-        ]
-         // onTap: (int index) => debugPrint("Call required method or page: $index"),
+              BottomNavigationBarItem(
+                  icon: Icon(Icons.play_arrow),
+                  backgroundColor: Colors.blueAccent,
+                  label: "Play Now"),
+              BottomNavigationBarItem(
+                  icon: Icon(Icons.history),
+                  backgroundColor: Colors.blueAccent,
+                  label: "Game History"),
+              BottomNavigationBarItem(
+                  icon: Icon(Icons.card_giftcard),
+                  backgroundColor: Colors.blueAccent,
+                  label: " Winning History"),
+              BottomNavigationBarItem(
+                  icon: Icon(Icons.person_pin_rounded),
+                  backgroundColor: Colors.blueAccent,
+                  label: "MyAccount")
+            ]
+          // onTap: (int index) => debugPrint("Call required method or page: $index"),
         ));
   }
 }
@@ -82,7 +81,9 @@ Container _getCard() {
 
 class ScaffoldExample extends StatelessWidget {
   var date = "01-27-2021";
+
   _tapforcam() => debugPrint("Click on camera");
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -151,7 +152,7 @@ class Home_app extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Material(
-        //color: Colors.deepOrange,
+      //color: Colors.deepOrange,
         shadowColor: Colors.blue,
         child: Center(
           child: Text(
