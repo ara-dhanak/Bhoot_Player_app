@@ -14,35 +14,35 @@ enum PageNumber {
 }
 
 class _bhoot_bottom_navState extends State<bhoot_bottom_nav> {
-int _currentIndex = 0;
-PageNumber _currentpage =PageNumber.Playnow;
-final List<PageNumber> _children = [
-  PageNumber.Playnow,
-  PageNumber.GameHistory,
-  PageNumber.WinningHistory,
-  PageNumber.MyAccount
-];
-
+  int _currentIndex = 0;
+  PageNumber _currentpage = PageNumber.Playnow;
+  final List<PageNumber> _children = [
+    PageNumber.Playnow,
+    PageNumber.GameHistory,
+    PageNumber.WinningHistory,
+    PageNumber.MyAccount
+  ];
 
 
 //We have to create the page on demand . No need to create the concrete objects of all the objects  on 2nd page
 
-void ontouchedbar(int index)
-{
-  setState(() {
-    _currentpage = _children[index];
-  });
-}
+  void ontouchedbar(int index) {
+    setState(() {
+      _currentpage = _children[index];
+    });
+  }
 
 
   @override
   Widget build(BuildContext context) {
-    return  new Scaffold(
+    return new Scaffold(
         appBar: AppBar(
           title: new Text("Bhootnath Demo Page for buttons"),
         ),
-        body: AbstractPage.CreatePage(_currentpage),//_children[_currentIndex], //This means which ever button will press from bottomnbar, the page will appear
-        bottomNavigationBar: BottomNavigationBar(type: BottomNavigationBarType.fixed,
+        body: AbstractPage.CreatePage(_currentpage),
+        //_children[_currentIndex], //This means which ever button will press from bottomnbar, the page will appear
+        bottomNavigationBar: BottomNavigationBar(
+            type: BottomNavigationBarType.fixed,
             onTap: ontouchedbar,
             currentIndex: _currentIndex,
             items: [
