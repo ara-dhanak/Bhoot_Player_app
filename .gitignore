@@ -4,3 +4,5 @@ ios*
 .dart*
 .idea/workspace.xml
 .packa*
+.flutter-plugins
+.flutter-plugins-dependencies

@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
-
-class winning_history extends StatefulWidget {
+import 'AbstractClassFactory.dart';
+class winning_history extends StatefulWidget implements AbstractPage {
   @override
   _winning_historyState createState() => _winning_historyState();
+  void BuildPage()
+  {
+
+  }
 }
 
 class _winning_historyState extends State<winning_history> {

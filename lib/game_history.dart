@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
-class game_history extends StatefulWidget {
+import 'AbstractClassFactory.dart';
+class game_history extends StatefulWidget implements AbstractPage {
   @override
   _game_historyState createState() => _game_historyState();
+  void BuildPage()
+  {
+
+  }
 }
 
 class _game_historyState extends State<game_history> {
