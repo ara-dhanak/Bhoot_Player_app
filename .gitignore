@@ -1,5 +1,5 @@
 .ide*
-build*
+build/
 ios*
 .dart_tool/*
 .idea/workspace.xml

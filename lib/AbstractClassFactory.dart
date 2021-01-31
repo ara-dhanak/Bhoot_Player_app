@@ -6,12 +6,7 @@ import 'package:flutter_app/myaccount.dart';
 import 'package:flutter_app/playnow.dart';
 import 'package:flutter_app/winning_history.dart';
 
-/*
-playnow(),
-  game_history(),
-  winning_history(),
-  myaccount()
- */
+
 abstract class AbstractPage extends StatefulWidget {
   void BuildPage();
 

@@ -14,7 +14,7 @@ enum PageNumber {
 }
 
 class _bhoot_bottom_navState extends State<bhoot_bottom_nav> {
-  int _currentIndex = 0;
+
   PageNumber _currentpage = PageNumber.Playnow;
   final List<PageNumber> _children = [
     PageNumber.Playnow,
@@ -44,7 +44,7 @@ class _bhoot_bottom_navState extends State<bhoot_bottom_nav> {
         bottomNavigationBar: BottomNavigationBar(
             type: BottomNavigationBarType.fixed,
             onTap: ontouchedbar,
-            currentIndex: _currentIndex,
+            currentIndex: _currentpage.index,
             items: [
               BottomNavigationBarItem(
                   icon: new Icon(Icons.play_arrow),
