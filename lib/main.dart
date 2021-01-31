@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'bhoot_page2.dart';
+import 'winning_history.dart';
 
 void main() =>
     runApp(new MaterialApp(
@@ -11,6 +12,7 @@ void main() =>
         home: bhoot_bottom_nav())
 //my test chinu
     );
+
 
 
 
