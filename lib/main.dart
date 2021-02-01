@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'bhoot_page2.dart';
+import 'LandingPage.dart';
 
 void main() =>
     runApp(new MaterialApp(

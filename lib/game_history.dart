@@ -4,9 +4,9 @@ import 'AbstractClassFactory.dart';
 class game_history extends StatefulWidget implements AbstractPage {
   @override
   _game_historyState createState() => _game_historyState();
-
+//request/response  obj;
   void BuildPage() {
-
+//REST API calls required for your page
   }
 }
 

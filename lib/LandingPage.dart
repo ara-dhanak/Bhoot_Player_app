@@ -6,24 +6,16 @@ class bhoot_bottom_nav extends StatefulWidget {
   _bhoot_bottom_navState createState() => _bhoot_bottom_navState();
 }
 
-enum PageNumber {
-  Playnow,
-  GameHistory,
-  WinningHistory,
-  MyAccount
-}
-
 class _bhoot_bottom_navState extends State<bhoot_bottom_nav> {
 
   PageNumber _currentpage = PageNumber.Playnow;
+
   final List<PageNumber> _children = [
     PageNumber.Playnow,
     PageNumber.GameHistory,
     PageNumber.WinningHistory,
     PageNumber.MyAccount
   ];
-
-
 //We have to create the page on demand . No need to create the concrete objects of all the objects  on 2nd page
 
   void ontouchedbar(int index) {
