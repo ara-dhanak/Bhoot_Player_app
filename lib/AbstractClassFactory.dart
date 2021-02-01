@@ -1,12 +1,17 @@
 //Implementing a classic use case of page factory
 import 'package:flutter/material.dart';
-import 'bhoot_page2.dart';
+import 'LandingPage.dart';
 import 'package:flutter_app/game_history.dart';
 import 'package:flutter_app/myaccount.dart';
 import 'package:flutter_app/playnow.dart';
 import 'package:flutter_app/winning_history.dart';
 
-
+enum PageNumber {
+  Playnow,
+  GameHistory,
+  WinningHistory,
+  MyAccount
+}
 abstract class AbstractPage extends StatefulWidget {
   void BuildPage();
 
@@ -19,7 +24,9 @@ abstract class AbstractPage extends StatefulWidget {
       case PageNumber.WinningHistory:
         return winning_history();
       case PageNumber.MyAccount:
-        return myaccount();
+        AbstractPage page4 = myaccount();
+        page4.BuildPage();
+        return page4;
       default:
         return null;
     }
