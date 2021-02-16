@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/ShowAlertDialog.dart';
+import 'package:flutter_app/reset_pwd.dart';
 import 'AbstractClassFactory.dart';
 
 class myaccount extends StatefulWidget implements AbstractPage {
@@ -13,11 +14,6 @@ class myaccount extends StatefulWidget implements AbstractPage {
 }
 
 class _myaccountState extends State<myaccount> {
-
-  void reset_pwd() {
-
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,22 +31,26 @@ class _myaccountState extends State<myaccount> {
                         showAlertDialog(
                             context, "Diamonds Transfer Successful!!!"));
                   }
-
                   ),
-
                   //Need to create a function in buildpage so onPress will b trigere
                   ElevatedButton(
-                      onPressed: reset_pwd, child: Text("Reset Password"),
+                      child: Text("Reset Password"),
                       style: ButtonStyle(
                           backgroundColor: MaterialStateProperty.all(
                               Colors.green)
-                      )
+                      ),
+                       onPressed: () { Navigator.push(context, MaterialPageRoute(builder: (context) => reset_password()));
+                      }
+
+
                   ),
                 ]
             )
         )
     );
   }
+
+
 }
 
 
