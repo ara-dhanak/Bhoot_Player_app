@@ -2,17 +2,17 @@ import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 import 'dart:convert';
 import 'ShowAlertDialog.dart';
-import 'PlayerModel.dart';
+//import 'PlayerModel.dart';
 
 
 var access_token = "";
 
-class PostsRepository {
+/*class PostsRepository {
   Future<List<ResultData>> getPosts() async {
     final result_response = await http.get("http://3.16.36.128/game/gamedata/");
     return resultDataFromJson(result_response.body);
   }
-}
+}*/
 void validate(
 
     BuildContext context, String PlayerName_Value, String PlayerPassword_value) async {
