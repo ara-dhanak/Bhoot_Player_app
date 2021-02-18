@@ -5,6 +5,7 @@ import 'package:flutter_app/reset_pwd.dart';
 import 'AbstractClassFactory.dart';
 
 class myaccount extends StatefulWidget implements AbstractPage {
+  var date;
   @override
   _myaccountState createState() => _myaccountState();
   //request/response  obj;
@@ -14,6 +15,8 @@ class myaccount extends StatefulWidget implements AbstractPage {
 }
 
 class _myaccountState extends State<myaccount> {
+  get date => null;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,6 +28,14 @@ class _myaccountState extends State<myaccount> {
             child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
+                  SizedBox(height: 20,),
+                  new Text("Date:  16-02-2021  " ,
+                      textAlign: TextAlign.left),
+              SizedBox(
+              height: 20,
+              ),
+              new Text("Supervisor name: Imran",
+                  textAlign: TextAlign.left),
                   ElevatedButton(
                       child: Text("Transfer Diamonds"), onPressed: () {
                     Future.delayed(Duration.zero, () =>
@@ -40,6 +51,7 @@ class _myaccountState extends State<myaccount> {
                               Colors.green)
                       ),
                        onPressed: () { Navigator.push(context, MaterialPageRoute(builder: (context) => reset_password()));
+
                       }
 
 
