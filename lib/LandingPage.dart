@@ -11,6 +11,7 @@ class _bhoot_bottom_navState extends State<bhoot_bottom_nav> {
   PageNumber _currentpage = PageNumber.Playnow;
 
   final List<PageNumber> _children = [
+
     PageNumber.Playnow,
     PageNumber.GameHistory,
     PageNumber.WinningHistory,
@@ -31,11 +32,12 @@ class _bhoot_bottom_navState extends State<bhoot_bottom_nav> {
         appBar: AppBar(
           title: new Text("Bhootnath Demo Page for buttons"),
         ),
-        body: AbstractPage.CreatePage(_currentpage),
-        //_children[_currentIndex], //This means which ever button will press from bottomnbar, the page will appear
+        body: Column(children :[Expanded(child:AbstractPage.CreatePage(_currentpage))]),
+            //_children[_currentIndex], //This means which ever button will press from bottomnbar, the page will appear
         bottomNavigationBar: BottomNavigationBar(
+
             type: BottomNavigationBarType.fixed,
-            onTap: ontouchedbar,
+            onTap:ontouchedbar, // Shoud have used Material Navigation # Techincal Debt //See LoginPage.dart for the implementation
             currentIndex: _currentpage.index,
             items: [
               BottomNavigationBarItem(

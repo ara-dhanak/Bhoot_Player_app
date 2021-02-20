@@ -13,7 +13,7 @@ var access_token = "";
     return resultDataFromJson(result_response.body);
   }
 }*/
-void validate(
+Future<bool> validate(
 
     BuildContext context, String PlayerName_Value, String PlayerPassword_value) async {
   final http.Response login_response = await http.post(
@@ -31,10 +31,12 @@ void validate(
     Map<String, dynamic> dartbody = jsonDecode(login_response.body);
     //print(jsonDecode(response.body));
     access_token = dartbody["access"];
-    
+    return true;
+
   } else {
     Future.delayed(
         Duration.zero, () => showAlertDialog(context, "Error while Login"));
+    return false ;
     //print(jsonDecode(response.body));
   }
 }
