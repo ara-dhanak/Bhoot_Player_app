@@ -1,14 +1,34 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/game_history.dart';
 import "ShowAlertDialog.dart";
 import "Request.dart";
-
+import 'AbstractClassFactory.dart';
+import 'LandingPage.dart';
 TextEditingController playername = new TextEditingController();
 TextEditingController playerpassword = new TextEditingController();
 TextStyle style = TextStyle(fontFamily: 'Montserrat', fontSize: 20.0);
 
-class LoginPage extends StatelessWidget {
+class LoginPage   extends StatefulWidget implements AbstractPage{
+  @override
+  LoginPage_State createState() => LoginPage_State();
+  void BuildPage() {
+//REST API calls required for your page
+  }
+
+}
+
+class LoginPage_State extends State<LoginPage> {
+
+
+  void LoginState() {
+    setState(() {
+
+    });
+  }
   @override
   Widget build(BuildContext context) {
+
+
 
     final emailField = TextField(
       controller: playername,
@@ -18,7 +38,7 @@ class LoginPage extends StatelessWidget {
           contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
           hintText: "User Name",
           border:
-              OutlineInputBorder(borderRadius: BorderRadius.circular(32.0))),
+          OutlineInputBorder(borderRadius: BorderRadius.circular(32.0))),
     );
     final passwordField = TextField(
       controller: playerpassword,
@@ -28,7 +48,7 @@ class LoginPage extends StatelessWidget {
           contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
           hintText: "Password",
           border:
-              OutlineInputBorder(borderRadius: BorderRadius.circular(32.0))),
+          OutlineInputBorder(borderRadius: BorderRadius.circular(32.0))),
     );
     final loginbuton = Material(
       elevation: 5.0,
@@ -41,12 +61,22 @@ class LoginPage extends StatelessWidget {
         onPressed: () {
           if (playername.text == "") {
             Future.delayed(Duration.zero,
-                () => showAlertDialog(context, "Please Enter UserName"));
+                    () => showAlertDialog(context, "Please Enter UserName"));
           } else if (playerpassword.text == "") {
             Future.delayed(Duration.zero,
-                () => showAlertDialog(context, "Please Enter Password"));
+                    () => showAlertDialog(context, "Please Enter Password"));
           } else {
-            validate(context, playername.text, playerpassword.text);
+            Future<bool> result = validate(context, playername.text, playerpassword.text);
+            if (result != false )
+              {
+                Navigator.push(
+                    context,MaterialPageRoute(builder: (context) => bhoot_bottom_nav()));
+              }
+            else
+              {
+                Future.delayed(Duration.zero,
+                        () => showAlertDialog(context, "Login Failed "));
+              }
           }
         },
         child: Text("Login",
@@ -59,7 +89,7 @@ class LoginPage extends StatelessWidget {
       appBar: AppBar(
 
         title: Text(
-          "BhootNath Player App",
+          "Welcome to BhootNath  - Login",
           textAlign: TextAlign.center,
         ),
       ),
@@ -76,12 +106,12 @@ class LoginPage extends StatelessWidget {
                   "Ready to Play",
                   textAlign: TextAlign.center,
                   style: style.copyWith(
-                     // backgroundColor: Colors.white,
-                      fontWeight: FontWeight.w500,
-                      fontSize: 25,
-                      fontStyle: FontStyle.italic,
+                    // backgroundColor: Colors.white,
+                    fontWeight: FontWeight.w500,
+                    fontSize: 25,
+                    fontStyle: FontStyle.italic,
 
-                          ),
+                  ),
                 ),
                 SizedBox(height: 35.0),
                 emailField,
@@ -102,3 +132,6 @@ class LoginPage extends StatelessWidget {
     );
   }
 }
+
+
+

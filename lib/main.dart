@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'LandingPage.dart';
+import 'LoginPage.dart';
 
 void main() =>
     runApp(new MaterialApp(
@@ -8,7 +8,7 @@ void main() =>
       //  home: BizzCard())
       //home: bhoot_bottom_nav()),
         debugShowCheckedModeBanner: false,
-        home: bhoot_bottom_nav())
+        home: LoginPage())
 
     );
 

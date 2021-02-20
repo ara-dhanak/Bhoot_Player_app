@@ -6,15 +6,17 @@ import 'ShowAlertDialog.dart';
 
 var access_token = "";
 
-// class PostsRepository {
-//   Future<List<ResultData>> getPosts() async {
-//     final result_response = await http.get("http://3.16.36.128/game/gamedata/");
-//     return resultDataFromJson(result_response.body);
-//   }
-// }
+/*class PostsRepository {
+  Future<List<ResultData>> getPosts() async {
+    final result_response = await http.get("http://3.16.36.128/game/gamedata/");
+    return resultDataFromJson(result_response.body);
+  }
+}*/
+Future<bool> validate(
 
 
-void validate(
+
+
 
    // BuildContext context, String PlayerName_Value, String PlayerPassword_value) async {
 BuildContext context, String _Resetpcontroller, String _Confirmpcontroller) async {
@@ -35,9 +37,12 @@ BuildContext context, String _Resetpcontroller, String _Confirmpcontroller) asyn
     //print(jsonDecode(response.body));
     access_token = dartbody["access"];
 
+    return true;
+
   } else {
     Future.delayed(
         Duration.zero, () => showAlertDialog(context, "Error while Login"));
+    return false ;
     //print(jsonDecode(response.body));
   }
 }

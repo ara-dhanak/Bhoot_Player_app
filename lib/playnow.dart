@@ -33,24 +33,23 @@ class _playnowState extends State<playnow> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          title: Text(" Game is On! Keep Playing!!!:"),
+
+          title: Column( crossAxisAlignment :CrossAxisAlignment.center,children:[Text(" Game is On! Keep Playing!!!:")]),
           backgroundColor: Colors.cyanAccent.shade400,
-          actions: <Widget>[
-            FlatButton(
-              textColor: Colors.white,
-              onPressed: () {_addnewRow();},
-              child: Text("Add",),
-              shape: CircleBorder(side: BorderSide(color: Colors.transparent)),
-            ),
-          ],
-          // leading: Icon(
-          //     onPressed: () => _addnewRow(),
-          //     icon: Icon(Icons.add),
-          //     label: Text(
-          //       'Add',
-          //       style: TextStyle(fontWeight: FontWeight.bold),
-          //     ))
-               ),
+
+          leading: Column(
+            children:[
+              Expanded(child:
+              FlatButton.icon(
+              onPressed: () => _addnewRow(),
+              icon: Icon(Icons.add),
+              materialTapTargetSize:MaterialTapTargetSize.shrinkWrap,
+              label: Text(
+                'Add',
+                style: TextStyle(fontWeight: FontWeight.bold))))],
+              )),
+
+
       body: Editable(
         key: _editableKey,
         //Assign Key to Widget
