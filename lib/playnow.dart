@@ -36,6 +36,7 @@ class _playnowState extends State<playnow> {
 
           title: Column( crossAxisAlignment :CrossAxisAlignment.center,children:[Text(" Game is On! Keep Playing!!!:")]),
           backgroundColor: Colors.cyanAccent.shade400,
+
           leading: Column(
             children:[
               Expanded(child:
@@ -47,6 +48,8 @@ class _playnowState extends State<playnow> {
                 'Add',
                 style: TextStyle(fontWeight: FontWeight.bold))))],
               )),
+
+
       body: Editable(
         key: _editableKey,
         //Assign Key to Widget

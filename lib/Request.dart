@@ -4,7 +4,6 @@ import 'dart:convert';
 import 'ShowAlertDialog.dart';
 //import 'PlayerModel.dart';
 
-
 var access_token = "";
 
 /*class PostsRepository {
@@ -15,15 +14,21 @@ var access_token = "";
 }*/
 Future<bool> validate(
 
-    BuildContext context, String PlayerName_Value, String PlayerPassword_value) async {
+
+
+
+
+   // BuildContext context, String PlayerName_Value, String PlayerPassword_value) async {
+BuildContext context, String _Resetpcontroller, String _Confirmpcontroller) async {
+
   final http.Response login_response = await http.post(
     'http://3.16.36.128/api/token/',
     headers: <String, String>{
       'Content-Type': 'application/json; charset=UTF-8',
     },
     body: jsonEncode(<String, String>{
-      'username': PlayerName_Value,
-      'password': PlayerPassword_value,
+      'username': _Resetpcontroller,
+      'password': _Confirmpcontroller,
     }),
   );
 
@@ -31,6 +36,7 @@ Future<bool> validate(
     Map<String, dynamic> dartbody = jsonDecode(login_response.body);
     //print(jsonDecode(response.body));
     access_token = dartbody["access"];
+
     return true;
 
   } else {
