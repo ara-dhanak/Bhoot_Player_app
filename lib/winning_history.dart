@@ -7,7 +7,9 @@ class winning_history extends StatefulWidget implements AbstractPage {
 
   void BuildPage() {
 //REST API calls required for your page
+
     getwinninghistory();
+
   }
 
 }
@@ -45,6 +47,7 @@ class _winning_historyState extends State<winning_history> {
             ]),
       );
 
+
       for (int i = 0; i <= 30; i++) {
         rows.add(
           TableRow(children: [
@@ -58,6 +61,8 @@ class _winning_historyState extends State<winning_history> {
       }
       return rows;
     }
+
+
 
 
     ;
