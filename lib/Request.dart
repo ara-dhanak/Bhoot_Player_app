@@ -13,11 +13,6 @@ var access_token = "";
   }
 }*/
 Future<bool> validate(
-
-
-
-
-
    // BuildContext context, String PlayerName_Value, String PlayerPassword_value) async {
 BuildContext context, String _Resetpcontroller, String _Confirmpcontroller) async {
 
@@ -76,4 +71,9 @@ void FinalSubmit(BuildContext context, int digit3, int digit1, int slot) async {
           () => showAlertDialog(context, "Error while Submitting"));
     }
   }
+}
+
+void getwinninghistory()
+{
+
 }
