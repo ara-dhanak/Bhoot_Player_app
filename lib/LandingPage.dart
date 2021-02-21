@@ -15,7 +15,8 @@ class _bhoot_bottom_navState extends State<bhoot_bottom_nav> {
     PageNumber.Playnow,
     PageNumber.GameHistory,
     PageNumber.WinningHistory,
-    PageNumber.MyAccount
+    PageNumber.MyAccount,
+    PageNumber.Latest_result
   ];
 //We have to create the page on demand . No need to create the concrete objects of all the objects  on 2nd page
 
@@ -43,19 +44,25 @@ class _bhoot_bottom_navState extends State<bhoot_bottom_nav> {
               BottomNavigationBarItem(
                   icon: new Icon(Icons.play_arrow),
                   backgroundColor: Colors.blueAccent,
-                  label: "Play Now"),
+                  label: "Play"),
+
+
               BottomNavigationBarItem(
                   icon: new Icon(Icons.history),
                   backgroundColor: Colors.blueAccent,
-                  label: "Game History"),
+                  label: "Game_History"),
               BottomNavigationBarItem(
                   icon: new Icon(Icons.card_giftcard),
                   backgroundColor: Colors.blueAccent,
-                  label: " Winning History"),
+                  label: "Winners"),
               BottomNavigationBarItem(
                   icon: Icon(Icons.person_pin_rounded),
                   backgroundColor: Colors.blueAccent,
-                  label: "MyAccount")
+                  label: "MyAccount"),
+              BottomNavigationBarItem(
+                  icon: new Icon(Icons.games),
+                  backgroundColor: Colors.blueAccent,
+                  label: "Results Out"),
             ]
         )
     );
