@@ -1,6 +1,5 @@
 //Implementing a classic use case of page factory
 import 'package:flutter/material.dart';
-import 'package:flutter_app/LoginPage.dart';
 import 'LandingPage.dart';
 import 'package:flutter_app/game_history.dart';
 import 'package:flutter_app/myaccount.dart';

@@ -2,13 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app/game_history.dart';
 import "ShowAlertDialog.dart";
 import "Request.dart";
-import 'AbstractClassFactory.dart';
 import 'LandingPage.dart';
 TextEditingController playername = new TextEditingController();
 TextEditingController playerpassword = new TextEditingController();
 TextStyle style = TextStyle(fontFamily: 'Montserrat', fontSize: 20.0);
 
-class LoginPage   extends StatefulWidget implements AbstractPage{
+class LoginPage   extends StatefulWidget{
   @override
   LoginPage_State createState() => LoginPage_State();
   void BuildPage() {
@@ -27,9 +26,6 @@ class LoginPage_State extends State<LoginPage> {
   }
   @override
   Widget build(BuildContext context) {
-
-
-
     final emailField = TextField(
       controller: playername,
       obscureText: false,
@@ -67,7 +63,8 @@ class LoginPage_State extends State<LoginPage> {
                     () => showAlertDialog(context, "Please Enter Password"));
           } else {
             Future<bool> result = validate(context, playername.text, playerpassword.text);
-            if (result != false )
+            print (result.toString());
+            if (result.toString() != false )
               {
                 Navigator.push(
                     context,MaterialPageRoute(builder: (context) => bhoot_bottom_nav()));

@@ -1,0 +1,354 @@
+{
+	"id": "a26ec049-ae8a-6a7a-4963-d2e1eab40a20",
+	"name": "pradhanaukri_prod_1",
+	"description": "",
+	"order": [
+		"1fdd08df-75d4-7e94-bc4f-9c6d974e3978",
+		"65840ccc-3fd4-f498-17d1-c5eae4791496",
+		"24b80350-b75d-d1df-c7f8-43e0e17c718e",
+		"56a2bef1-f2a5-6045-ea82-d011cc9c15b9",
+		"e2c8a134-44b7-5b39-10f1-033fcdde1f5f",
+		"815d4651-b41e-85eb-a60e-6326769ef5bb",
+		"01b9ff81-e903-785b-c89e-8aac3bddab7b",
+		"683c9b49-0806-1f04-99e5-179afdb8d527",
+		"5c34a0d0-8dc3-f8b7-f2c8-74a9c60fe18d",
+		"06622ecc-30d9-941b-d6af-34e12475cb52"
+	],
+	"folders": [],
+	"folders_order": [],
+	"timestamp": 1610610426003,
+	"owner": "4392859",
+	"public": false,
+	"requests": [
+		{
+			"id": "01b9ff81-e903-785b-c89e-8aac3bddab7b",
+			"headers": "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjEzNzU2NzY4LCJqdGkiOiI3ZGQxNTAyMjYyZWI0NWZjYjgxMDAyYjdmYzAzNGU0NyIsInVzZXJfaWQiOjJ9.rBnFubf8Tk1hH3ifeCVGyzrmA2V5g4OVwJDl_ilx1Bs\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjEzNzU2NzY4LCJqdGkiOiI3ZGQxNTAyMjYyZWI0NWZjYjgxMDAyYjdmYzAzNGU0NyIsInVzZXJfaWQiOjJ9.rBnFubf8Tk1hH3ifeCVGyzrmA2V5g4OVwJDl_ilx1Bs",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://3.16.36.128/game/lottery_history/?from=2021-02-01&to=2021-02-25",
+			"queryParams": [
+				{
+					"key": "from",
+					"value": "2021-02-01",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "to",
+					"value": "2021-02-25",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1613895637419,
+			"name": "get lottery_history copy",
+			"description": "",
+			"collectionId": "a26ec049-ae8a-6a7a-4963-d2e1eab40a20",
+			"responses": []
+		},
+		{
+			"id": "06622ecc-30d9-941b-d6af-34e12475cb52",
+			"headers": "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjEzOTAzNzU1LCJqdGkiOiIxOWRmY2JmYjNiMGM0Mzc1YjQxOGE1ZjRiNmE5YTYwMiIsInVzZXJfaWQiOjJ9.B-chTC2tJe-WA6iS6q4t-3EJuVhdTkHX6ckq2tf51fQ\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjEzOTAzNzU1LCJqdGkiOiIxOWRmY2JmYjNiMGM0Mzc1YjQxOGE1ZjRiNmE5YTYwMiIsInVzZXJfaWQiOjJ9.B-chTC2tJe-WA6iS6q4t-3EJuVhdTkHX6ckq2tf51fQ",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://3.16.36.128/game/win/?for=2021-02-19",
+			"queryParams": [
+				{
+					"key": "for",
+					"value": "2021-02-19",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1613900205722,
+			"name": "GetPlayedWin copy",
+			"description": "",
+			"collectionId": "a26ec049-ae8a-6a7a-4963-d2e1eab40a20",
+			"responses": []
+		},
+		{
+			"id": "1fdd08df-75d4-7e94-bc4f-9c6d974e3978",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://3.16.36.128/api/token/",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1613415013793,
+			"name": "get token",
+			"description": "",
+			"collectionId": "a26ec049-ae8a-6a7a-4963-d2e1eab40a20",
+			"responses": [],
+			"rawModeData": "{\"username\": \"admin\", \"password\": \"Admin@123\"}"
+		},
+		{
+			"id": "24b80350-b75d-d1df-c7f8-43e0e17c718e",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://3.16.36.128/api/token/refresh/",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1613626368235,
+			"name": "refresh token",
+			"description": "",
+			"collectionId": "a26ec049-ae8a-6a7a-4963-d2e1eab40a20",
+			"responses": [],
+			"rawModeData": "{\"refresh\":\"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTYxMDU0ODk0NiwianRpIjoiMzg4ODQ0ODJhMGViNGFlMjkzYWMyN2NiNThiYzBmOWUiLCJ1c2VyX2lkIjoyfQ.zYjxsD1SetRVBCgFDvYWurxNOrVPr2Pa_Xwpi0p1m-g\"}"
+		},
+		{
+			"id": "56a2bef1-f2a5-6045-ea82-d011cc9c15b9",
+			"headers": "Content-Type: application/json\nAuthorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjEzNDE5Mzg5LCJqdGkiOiJmZGNmZDI0NzliNTk0YmU1YTRiODJlNGM1OGRmYTM2YyIsInVzZXJfaWQiOjJ9.EIOTEVLsPIOkYkCOotqYrXyfNhT5NeunHD7uftakRJs\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Authorization",
+					"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjEzNDE5Mzg5LCJqdGkiOiJmZGNmZDI0NzliNTk0YmU1YTRiODJlNGM1OGRmYTM2YyIsInVzZXJfaWQiOjJ9.EIOTEVLsPIOkYkCOotqYrXyfNhT5NeunHD7uftakRJs",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://3.16.36.128/game/gamedata/",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1613626370042,
+			"name": "add _game_data copy",
+			"description": "",
+			"collectionId": "a26ec049-ae8a-6a7a-4963-d2e1eab40a20",
+			"responses": [],
+			"rawModeData": "{\n\t\"digit3\": 323, \n\t\"digit1\": 8, \n\t\"slot\": 6,\n\t\"rider_id\": 2\n}"
+		},
+		{
+			"id": "5c34a0d0-8dc3-f8b7-f2c8-74a9c60fe18d",
+			"headers": "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjEzOTAzNzU1LCJqdGkiOiIxOWRmY2JmYjNiMGM0Mzc1YjQxOGE1ZjRiNmE5YTYwMiIsInVzZXJfaWQiOjJ9.B-chTC2tJe-WA6iS6q4t-3EJuVhdTkHX6ckq2tf51fQ\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjEzOTAzNzU1LCJqdGkiOiIxOWRmY2JmYjNiMGM0Mzc1YjQxOGE1ZjRiNmE5YTYwMiIsInVzZXJfaWQiOjJ9.B-chTC2tJe-WA6iS6q4t-3EJuVhdTkHX6ckq2tf51fQ",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://3.16.36.128/game/played/?till=2021-02-21",
+			"queryParams": [
+				{
+					"key": "till",
+					"value": "2021-02-21",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1613900209083,
+			"name": "GetAllPlayedHistory copy",
+			"description": "",
+			"collectionId": "a26ec049-ae8a-6a7a-4963-d2e1eab40a20",
+			"responses": []
+		},
+		{
+			"id": "65840ccc-3fd4-f498-17d1-c5eae4791496",
+			"headers": "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjEzNDE5Mzg5LCJqdGkiOiJmZGNmZDI0NzliNTk0YmU1YTRiODJlNGM1OGRmYTM2YyIsInVzZXJfaWQiOjJ9.EIOTEVLsPIOkYkCOotqYrXyfNhT5NeunHD7uftakRJs\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjEzNDE5Mzg5LCJqdGkiOiJmZGNmZDI0NzliNTk0YmU1YTRiODJlNGM1OGRmYTM2YyIsInVzZXJfaWQiOjJ9.EIOTEVLsPIOkYkCOotqYrXyfNhT5NeunHD7uftakRJs",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://3.16.36.128/users/",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1613626366398,
+			"name": "get users",
+			"description": "",
+			"collectionId": "a26ec049-ae8a-6a7a-4963-d2e1eab40a20",
+			"responses": []
+		},
+		{
+			"id": "683c9b49-0806-1f04-99e5-179afdb8d527",
+			"headers": "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjEzNzYzMDg1LCJqdGkiOiI5Yzg0YmE0MmQ3YTc0MmM5OTE0MDhlOWM2ZGJkNGEwNSIsInVzZXJfaWQiOjJ9.km_yUMm64o9BaU2Lp3nK_pA1chl4e3ivitLkQaOLN0U\nContent-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjEzNzYzMDg1LCJqdGkiOiI5Yzg0YmE0MmQ3YTc0MmM5OTE0MDhlOWM2ZGJkNGEwNSIsInVzZXJfaWQiOjJ9.km_yUMm64o9BaU2Lp3nK_pA1chl4e3ivitLkQaOLN0U",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://3.16.36.128/game/bet/",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1613759781568,
+			"name": "user bet copy",
+			"description": "",
+			"collectionId": "a26ec049-ae8a-6a7a-4963-d2e1eab40a20",
+			"responses": [],
+			"rawModeData": "{\n\t\"slot\": 1,\n\t\"bet\":[\n\t\t{\n\t\t\t\"3digit\": 199,\n\t\t\t\"1digit\": 9,\n\t\t\t\"diamond\": 100,\n\t\t\t\"type\": \"patti\"\n\t\t},\n\t\t{\n\t\t\t\"3digit\": 129,\n\t\t\t\"1digit\": 3,\n\t\t\t\"diamond\": 200,\n\t\t\t\"type\": \"patti\"\n\t\t}\n\t]\n}\n"
+		},
+		{
+			"id": "815d4651-b41e-85eb-a60e-6326769ef5bb",
+			"headers": "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjEzNDkyNjYyLCJqdGkiOiJjNjQ1YmMwNjM0NDY0YjRjODMyZTk5MWQwOGI5MjkxMyIsInVzZXJfaWQiOjJ9.HVlS2B0u50OWM-sCdU-46w9_seHvreGYmm1ANiqg9qA\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjEzNDkyNjYyLCJqdGkiOiJjNjQ1YmMwNjM0NDY0YjRjODMyZTk5MWQwOGI5MjkxMyIsInVzZXJfaWQiOjJ9.HVlS2B0u50OWM-sCdU-46w9_seHvreGYmm1ANiqg9qA",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://3.16.36.128/accounts/user_details/",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1613626372500,
+			"name": "get user_details copy",
+			"description": "",
+			"collectionId": "a26ec049-ae8a-6a7a-4963-d2e1eab40a20",
+			"responses": []
+		},
+		{
+			"id": "e2c8a134-44b7-5b39-10f1-033fcdde1f5f",
+			"headers": "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjEzNDE5Mzg5LCJqdGkiOiJmZGNmZDI0NzliNTk0YmU1YTRiODJlNGM1OGRmYTM2YyIsInVzZXJfaWQiOjJ9.EIOTEVLsPIOkYkCOotqYrXyfNhT5NeunHD7uftakRJs\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjEzNDE5Mzg5LCJqdGkiOiJmZGNmZDI0NzliNTk0YmU1YTRiODJlNGM1OGRmYTM2YyIsInVzZXJfaWQiOjJ9.EIOTEVLsPIOkYkCOotqYrXyfNhT5NeunHD7uftakRJs",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://3.16.36.128/game/gamedata/",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1613626371259,
+			"name": "list game data copy",
+			"description": "",
+			"collectionId": "a26ec049-ae8a-6a7a-4963-d2e1eab40a20",
+			"responses": []
+		}
+	]
+}
