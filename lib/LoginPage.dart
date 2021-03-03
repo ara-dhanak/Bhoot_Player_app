@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 import 'package:flutter_app/game_history.dart';
 import "ShowAlertDialog.dart";
@@ -54,7 +55,7 @@ class LoginPage_State extends State<LoginPage> {
       child: MaterialButton(
         minWidth: MediaQuery.of(context).size.width,
         padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
-        onPressed: () {
+        onPressed: () async{
           if (playername.text == "") {
             Future.delayed(Duration.zero,
                     () => showAlertDialog(context, "Please Enter UserName"));
@@ -62,9 +63,10 @@ class LoginPage_State extends State<LoginPage> {
             Future.delayed(Duration.zero,
                     () => showAlertDialog(context, "Please Enter Password"));
           } else {
-            Future<bool> result = validate(context, playername.text, playerpassword.text);
+           Future<bool> result = validate(context, playername.text, playerpassword.text);
+           //Console.log(result);
             print (result.toString());
-            if (result.toString() != false )
+            if (result.toString()!=false)
               {
                 Navigator.push(
                     context,MaterialPageRoute(builder: (context) => bhoot_bottom_nav()));

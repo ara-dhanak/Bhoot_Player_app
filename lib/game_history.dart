@@ -52,7 +52,7 @@ class _game_historyState extends State<game_history>  {
           backgroundColor: Colors.cyanAccent.shade400,
         ),
       body: Center(
-    child: RaisedButton(
+    child: MaterialButton(
     onPressed: BuildPage,
       child: Text('Bhootnath Result '),
     ),
