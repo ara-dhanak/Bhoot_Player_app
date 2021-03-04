@@ -5,7 +5,7 @@ import 'package:flutter_app/game_history.dart';
 import 'package:flutter_app/myaccount.dart';
 import 'package:flutter_app/playnow.dart';
 import 'package:flutter_app/winning_history.dart';
-import 'package:flutter_app/Latest_result.dart';
+import 'Played_History.dart';
 
 
 enum PageNumber {
@@ -14,7 +14,7 @@ enum PageNumber {
   GameHistory,
   WinningHistory,
   MyAccount,
-  Latest_result
+  played_history
 
 }
 abstract class AbstractPage extends StatefulWidget {
@@ -29,23 +29,19 @@ abstract class AbstractPage extends StatefulWidget {
         return game_history();
       case PageNumber.WinningHistory:
         return winning_history();
-      case PageNumber.Latest_result:
-        return latest_result();
+
 
       case PageNumber.MyAccount:
         AbstractPage page4 = myaccount();
         page4.BuildPage();
         return page4;
+      case PageNumber.played_history:
+        return Played_History();
       default:
         return null;
     }
   }
 
-/* @override
-    Widget build({
-        @required BuildContext context,
-        @required Widget child,
-        @required VoidCallback onPressed
-    });*/
+
 }
 
