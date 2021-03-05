@@ -5,11 +5,6 @@ import 'Models/Played_History_Model.dart';
 import 'Request.dart';
 
 PlayedHistoryModel _Played_hist;
-TextStyle Played_History_Style = TextStyle(
-    fontWeight: FontWeight.w700,
-    color: Colors.black,
-    fontSize: 20.0,
-    fontFamily: 'Raleway');
 TextStyle datacoloumn_style = TextStyle(fontStyle: FontStyle.italic);
 
 class Played_History extends StatefulWidget implements AbstractPage {
@@ -63,20 +58,20 @@ class _Played_HistoryState extends State<Played_History> {
                         child: DataTable(
                           columns: <DataColumn>[
                             DataColumn(
-                                label: Text('SL', style: datacoloumn_style)),
+                                label: Text('SL No', style: datacoloumn_style)),
                             DataColumn(
                                 label: Text('Patti', style: datacoloumn_style)),
                             DataColumn(
                                 label:
-                                    Text('Single', style: datacoloumn_style)),
+                                    Text('Single Patti', style: datacoloumn_style)),
                             DataColumn(
                                 label:
-                                    Text('Amount', style: datacoloumn_style)),
+                                    Text('Diamonds', style: datacoloumn_style)),
                             DataColumn(
                                 label: Text('Date', style: datacoloumn_style)),
                             DataColumn(
                                 label:
-                                    Text('Game no', style: datacoloumn_style))
+                                    Text('Slot', style: datacoloumn_style))
                           ],
                           rows: CreateDynamicTableData(snapshot.data),
                         ),

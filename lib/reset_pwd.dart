@@ -51,7 +51,7 @@ class _reset_passwordState extends State<reset_password> {
                             ()=> showAlertDialog(context, "Confirm password can't be empty"));
                        }
                     else {
-                      validate(context, _Resetpcontroller.text
+                    reset_Pwd(_Resetpcontroller.text
                           , _Confirmpcontroller.text);
                   }
 

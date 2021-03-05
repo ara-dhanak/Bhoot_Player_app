@@ -11,8 +11,9 @@ class _bhoot_bottom_navState extends State<bhoot_bottom_nav> {
 
   String user_name="Guest";
   String penciler_name = "Imran";
-  UserDetailModel data;
+
   PageNumber _currentpage = PageNumber.GameHistory;
+  UserDetailModel user_detail;
 
 
   final List<PageNumber> _children = [
@@ -29,27 +30,29 @@ class _bhoot_bottom_navState extends State<bhoot_bottom_nav> {
   void ontouchedbar(int index) {
     setState(() {
       _currentpage = _children[index];
+
     });
   }
- Future <UserDetailModel> User_API()async{
-    final UserDetailModel user_detail= await User_Detail_API();
-   return user_detail;
+  Future <UserDetailModel> User_API()async{
+    user_detail= await User_Detail_API();
+    User_get();
   }
   void User_get() {
     setState(() async {
-     //temp_get();
-      Future data=User_API();
-    });
-  }
-  void temp_get(){
-    setState(() {
-      user_name=data.supervisorName;
+      user_name=user_detail.userName.toString();
+      penciler_name=user_detail.supervisorName.toString();
     });
   }
 
+  // void temp_get(){
+  //   setState(() {
+  //
+  //   });
+  // }
+
   @override
   Widget build(BuildContext context) {
-    //User_get();
+    User_API();
     return new Scaffold(
 
         appBar: AppBar(

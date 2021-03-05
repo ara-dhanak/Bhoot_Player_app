@@ -63,10 +63,10 @@ class LoginPage_State extends State<LoginPage> {
             Future.delayed(Duration.zero,
                     () => showAlertDialog(context, "Please Enter Password"));
           } else {
-           Future<bool> result = validate(context, playername.text, playerpassword.text);
+           bool result = await validateLogin(playername.text, playerpassword.text);
            //Console.log(result);
-            print (result.toString());
-            if (result.toString()!=false)
+            //print ('The Result is -'+ result.toString());
+            if (result)
               {
                 Navigator.push(
                     context,MaterialPageRoute(builder: (context) => bhoot_bottom_nav()));
@@ -86,7 +86,7 @@ class LoginPage_State extends State<LoginPage> {
     );
     return Scaffold(
       appBar: AppBar(
-
+        centerTitle: true,
         title: Text(
           " Welcome to BhootNath - Login",
           textAlign: TextAlign.center,
@@ -102,7 +102,7 @@ class LoginPage_State extends State<LoginPage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 new Text(
-                  "Ready to Play???",
+                  "Ready to Play?",
                   textAlign: TextAlign.center,
                   style: style.copyWith(
                     fontWeight: FontWeight.w500,
