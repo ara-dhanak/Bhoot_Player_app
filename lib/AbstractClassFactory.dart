@@ -10,11 +10,11 @@ import 'Played_History.dart';
 
 enum PageNumber {
 
-  Playnow,
   GameHistory,
+  Playnow,
   WinningHistory,
-  MyAccount,
-  played_history
+  played_history,
+  MyAccount
 
 }
 abstract class AbstractPage extends StatefulWidget {
@@ -22,21 +22,23 @@ abstract class AbstractPage extends StatefulWidget {
 
   static AbstractPage CreatePage(PageNumber P_n) {
     switch (P_n) {
+      case PageNumber.GameHistory:
+        return game_history();
+
       case PageNumber.Playnow:
         return playnow();
 
-      case PageNumber.GameHistory:
-        return game_history();
       case PageNumber.WinningHistory:
         return winning_history();
 
+        case PageNumber.played_history:
+        return Played_History();
 
       case PageNumber.MyAccount:
         AbstractPage page4 = myaccount();
         page4.BuildPage();
         return page4;
-      case PageNumber.played_history:
-        return Played_History();
+
       default:
         return null;
     }

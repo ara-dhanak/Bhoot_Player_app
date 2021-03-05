@@ -17,7 +17,8 @@ class _reset_passwordState extends State<reset_password> {
     return new Scaffold(
         appBar: AppBar(
           title: Text("Reset Your Password"),
-          backgroundColor: Colors.cyanAccent.shade400,
+          //backgroundColor: Colors.cyanAccent.shade400,
+          centerTitle: true,
         ),
         body: Container(
           alignment: Alignment.topRight,

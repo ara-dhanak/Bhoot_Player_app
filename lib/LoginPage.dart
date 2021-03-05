@@ -88,7 +88,7 @@ class LoginPage_State extends State<LoginPage> {
       appBar: AppBar(
 
         title: Text(
-          "Welcome to BhootNath  - Login",
+          " Welcome to BhootNath - Login",
           textAlign: TextAlign.center,
         ),
       ),
@@ -102,14 +102,12 @@ class LoginPage_State extends State<LoginPage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 new Text(
-                  "Ready to Play",
+                  "Ready to Play???",
                   textAlign: TextAlign.center,
                   style: style.copyWith(
-                    // backgroundColor: Colors.white,
                     fontWeight: FontWeight.w500,
                     fontSize: 25,
-                    fontStyle: FontStyle.italic,
-
+                    fontStyle: FontStyle.normal,
                   ),
                 ),
                 SizedBox(height: 35.0),

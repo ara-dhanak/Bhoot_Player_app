@@ -124,3 +124,36 @@ Future<UserDetailModel>User_Detail_API() async{
     return null;
   }
 }
+
+//
+Future<bool> reset_Pwd(
+    // BuildContext context, String PlayerName_Value, String PlayerPassword_value) async {
+    BuildContext context, String _Resetpcontroller, String _Confirmpcontroller) async {
+  var Login_URL='api/token/';
+  final http.Response login_response = await http.post(
+    URL+Login_URL,
+    headers: <String, String>{
+      'Content-Type': 'application/json; charset=UTF-8',
+    },
+    body: jsonEncode(<String, String>{
+      'username': _Resetpcontroller,
+      'password': _Confirmpcontroller,
+    }),
+  );
+
+  if (login_response.statusCode == 200) {
+    Map<String, dynamic> LoginResponse = jsonDecode(login_response.body);
+    //print(jsonDecode(response.body));
+    access_token = LoginResponse["access"];
+    print('The access token is'+ access_token);
+    header_access="Bearer " + access_token;
+    // Navigator.push(
+    //     context,MaterialPageRoute(builder: (context) => bhoot_bottom_nav()));
+    return true;
+  } else {
+    // Future.delayed(
+    //     Duration.zero, () => showAlertDialog(context, "Error while Login"));
+    return false;
+    //print(jsonDecode(response.body));
+  }
+}

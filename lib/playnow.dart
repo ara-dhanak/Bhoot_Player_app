@@ -23,6 +23,7 @@ class playnow extends StatefulWidget implements AbstractPage {
 }
 
 class _playnowState extends State<playnow> {
+
   void _addnewRow() {
     setState(() {
       _editableKey.currentState.createRow();
@@ -33,8 +34,9 @@ class _playnowState extends State<playnow> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(" Game is On! Keep Playing!!!:"),
-        backgroundColor: Colors.cyanAccent.shade400,
+        title: Text(" Lets Play Beyond Reality!!! "),
+
+        automaticallyImplyLeading: false,
         actions: <Widget>[
           FlatButton(
             textColor: Colors.white,
@@ -43,13 +45,6 @@ class _playnowState extends State<playnow> {
             shape: CircleBorder(side: BorderSide(color: Colors.transparent)),
           ),
         ],
-        // leading: Icon(
-        //     onPressed: () => _addnewRow(),
-        //     icon: Icon(Icons.add),
-        //     label: Text(
-        //       'Add',
-        //       style: TextStyle(fontWeight: FontWeight.bold),
-        //     ))
       ),
       body: Editable(
           key: _editableKey,

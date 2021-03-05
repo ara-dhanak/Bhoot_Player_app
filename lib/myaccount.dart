@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_app/ShowAlertDialog.dart';
 import 'package:flutter_app/reset_pwd.dart';
 import 'AbstractClassFactory.dart';
@@ -21,21 +22,16 @@ class _myaccountState extends State<myaccount> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text("My Account details:"),
-          backgroundColor: Colors.blue.shade400,
+          title: Text("My Account details"),
+          //backgroundColor: Colors.blue.shade400,
+          centerTitle: true,
+          automaticallyImplyLeading: false,
         ),
         body: Center(
             child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  SizedBox(height: 20,),
-                  new Text("Date:  16-02-2021  " ,
-                      textAlign: TextAlign.left),
-              SizedBox(
-              height: 20,
-              ),
-              new Text("Supervisor name: Imran",
-                  textAlign: TextAlign.left),
+                  new Image.asset('images/goldb.png', width: 300, height: 400, alignment: Alignment.center,),
                   ElevatedButton(
                       child: Text("Transfer Diamonds"), onPressed: () {
                     Future.delayed(Duration.zero, () =>
