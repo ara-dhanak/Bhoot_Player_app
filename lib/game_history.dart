@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'AbstractClassFactory.dart';
 import 'package:url_launcher/url_launcher.dart';
+
 class game_history extends StatefulWidget implements AbstractPage {
   @override
   _game_historyState createState() => _game_historyState();
@@ -28,19 +29,17 @@ launchURL() async {
   try {
     const url = 'https://flutter.dev';
     if (await canLaunch(url)) {
-      await launch(url,forceWebView: true);
+      await launch(url, forceWebView: true);
     } else {
       throw 'Madhu Error Loading BhootNath Result Page $url';
     }
-  }
-  catch(e)
-  {
+  } catch (e) {
     print(e.toString());
   }
 }
-class _game_historyState extends State<game_history>  {
-  void BuildPage()
-  {
+
+class _game_historyState extends State<game_history> {
+  void BuildPage() {
     launchURL();
   }
 
@@ -53,12 +52,13 @@ class _game_historyState extends State<game_history>  {
           centerTitle: true,
           automaticallyImplyLeading: false,
         ),
-      body: Center(
-    child: MaterialButton(
-    onPressed: BuildPage,
-      child: Text('Bhootnath Result '),
-    ),
-    )
-    );
+        body: Center(
+          child: ElevatedButton(
+            onPressed: BuildPage,
+            child: Text('Bhootnath Result '),
+            style: ButtonStyle(
+                backgroundColor: MaterialStateProperty.all(Colors.lightBlueAccent)),
+          ),
+        ));
   }
 }

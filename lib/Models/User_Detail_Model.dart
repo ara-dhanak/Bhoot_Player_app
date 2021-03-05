@@ -21,7 +21,7 @@ class UserDetailModel {
   });
 
   final String userId;
-  final  userName;
+  final String userName;
   final String supervisorName;
   final String supervisorId;
   final String userRole;
@@ -29,15 +29,15 @@ class UserDetailModel {
   final String phone;
   final String lastActive;
 
-  factory UserDetailModel.fromJson(final json) => UserDetailModel(
-    userId: json["user_id"],
-    userName: json["user_name"],
-    supervisorName: json["supervisor_name"],
-    supervisorId: json["supervisor_id"],
-    userRole: json["user_role"],
-    diamond: json["diamond"],
-    phone: json["phone"],
-    lastActive: json["last_active"],
-  );
+  // factory UserDetailModel.fromJson(final json) => UserDetailModel(
+  //   userId: json["user_id"],
+  //   userName: json["user_name"],
+  //   supervisorName: json["supervisor_name"],
+  //   supervisorId: json["supervisor_id"],
+  //   userRole: json["user_role"],
+  //   diamond: json["diamond"]as int,
+  //   phone: json["phone"],
+  //   lastActive: json["last_active"],
+  // );
 
 }
