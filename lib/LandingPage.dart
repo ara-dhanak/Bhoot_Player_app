@@ -10,16 +10,19 @@ class bhoot_bottom_nav extends StatefulWidget {
 class _bhoot_bottom_navState extends State<bhoot_bottom_nav> {
 
   String user_name="Guest";
+  String penciler_name = "Imran";
   UserDetailModel data;
-  PageNumber _currentpage = PageNumber.Playnow;
+  PageNumber _currentpage = PageNumber.GameHistory;
+
 
   final List<PageNumber> _children = [
 
-    PageNumber.Playnow,
     PageNumber.GameHistory,
+    PageNumber.Playnow,
     PageNumber.WinningHistory,
-    PageNumber.MyAccount,
-    PageNumber.played_history
+    PageNumber.played_history,
+    PageNumber.MyAccount
+
   ];
 //We have to create the page on demand . No need to create the concrete objects of all the objects  on 2nd page
 
@@ -50,7 +53,9 @@ class _bhoot_bottom_navState extends State<bhoot_bottom_nav> {
     return new Scaffold(
 
         appBar: AppBar(
-          title: new Text("Welcome ${user_name}"),
+          title: new Text("Welcome ${user_name}! Penciler name-${penciler_name}" ),
+          centerTitle: true,
+          automaticallyImplyLeading: false,
         ),
         body: Column(children :[Expanded(child:AbstractPage.CreatePage(_currentpage))]),
             //_children[_currentIndex], //This means which ever button will press from bottomnbar, the page will appear
@@ -61,27 +66,25 @@ class _bhoot_bottom_navState extends State<bhoot_bottom_nav> {
             currentIndex: _currentpage.index,
             items: [
               BottomNavigationBarItem(
+                  icon: new Icon(Icons.history),
+                  backgroundColor: Colors.blueAccent,
+                  label: "Game History"),
+              BottomNavigationBarItem(
                   icon: new Icon(Icons.play_arrow),
                   backgroundColor: Colors.blueAccent,
                   label: "Play"),
-
-
-              BottomNavigationBarItem(
-                  icon: new Icon(Icons.history),
-                  backgroundColor: Colors.blueAccent,
-                  label: "Game_History"),
               BottomNavigationBarItem(
                   icon: new Icon(Icons.card_giftcard),
                   backgroundColor: Colors.blueAccent,
                   label: "Winners"),
               BottomNavigationBarItem(
-                  icon: Icon(Icons.person_pin_rounded),
-                  backgroundColor: Colors.blueAccent,
-                  label: "MyAccount"),
-              BottomNavigationBarItem(
                   icon: new Icon(Icons.games),
                   backgroundColor: Colors.blueAccent,
-                  label: "played History"),
+                  label: "Played History"),
+              BottomNavigationBarItem(
+                  icon: Icon(Icons.person_pin_rounded),
+                  backgroundColor: Colors.blueAccent,
+                  label: "MyAccount")
             ]
         )
     );

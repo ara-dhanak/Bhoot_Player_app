@@ -17,22 +17,14 @@ class Played_History extends StatefulWidget implements AbstractPage {
   _Played_HistoryState createState() => _Played_HistoryState();
 
   void BuildPage() async {
-    //final PlayedHistoryModel _Played_hist=await Played_history();
     Played_History();
-    //final Future <PlayedHistoryModel> _Played_hist=  await();
   }
 }
 
 class _Played_HistoryState extends State<Played_History> {
   @override
   Widget build(BuildContext context) {
-    // void BuildPage() async{
-    //
-    //   final PlayedHistoryModel Played_hist= await Played_history();
-    //   setState(() {
-    //     _Played_hist= Played_hist;
-    //   });
-    // }
+
     List<DataRow> CreateDynamicTableData(data) {
       List<DataRow> rows = [];
       for (int i = 0; i <= data.length - 1; i++) {
@@ -53,7 +45,7 @@ class _Played_HistoryState extends State<Played_History> {
     return Scaffold(
         appBar: AppBar(
             centerTitle: true,
-            title: Text("Player History are here!!!",textAlign: TextAlign.center),
+            title: Text("Player History is here!!!",textAlign: TextAlign.center),
             //backgroundColor: Colors.yellow,
             automaticallyImplyLeading: false),
         body: Center(

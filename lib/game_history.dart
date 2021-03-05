@@ -48,8 +48,10 @@ class _game_historyState extends State<game_history>  {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text("Here is your Game history!!!"),
-          backgroundColor: Colors.cyanAccent.shade400,
+          title: Text(" Checkout your Game history!!! "),
+          //backgroundColor: Colors.cyanAccent.shade400,
+          centerTitle: true,
+          automaticallyImplyLeading: false,
         ),
       body: Center(
     child: MaterialButton(
