@@ -35,7 +35,7 @@ class _playnowState extends State<playnow> {
     return Scaffold(
       appBar: AppBar(
         title: Text(" Lets Play Beyond Reality!!! "),
-
+        centerTitle: true,
         automaticallyImplyLeading: false,
         actions: <Widget>[
           FlatButton(
