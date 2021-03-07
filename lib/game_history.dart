@@ -53,12 +53,16 @@ class _game_historyState extends State<game_history> {
           automaticallyImplyLeading: false,
         ),
         body: Center(
-          child: ElevatedButton(
-            onPressed: BuildPage,
-            child: Text('Bhootnath Result '),
-            style: ButtonStyle(
-                backgroundColor: MaterialStateProperty.all(Colors.lightBlueAccent)),
-          ),
-        ));
-  }
-}
+        child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+          //new Image.asset('images/goldb.png', width: 300, height: 400, alignment: Alignment.center),
+               new Image.asset('images/goldb.png', width: 300, height: 400, alignment: Alignment.center,),
+          ElevatedButton(
+        onPressed: BuildPage,
+        child: Text('Bhootnath Result '),
+        style: ButtonStyle(
+            backgroundColor: MaterialStateProperty.all(Colors.lightBlueAccent))
+    )]))
+    );
+}}
