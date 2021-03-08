@@ -1,6 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 import 'AbstractClassFactory.dart';
+import 'Models/Played_History_Model.dart';
 import 'Request.dart';
+
+
+TextStyle datacoloumn_style = TextStyle(fontStyle: FontStyle.italic);
+
 class winning_history extends StatefulWidget implements AbstractPage {
   @override
   _winning_historyState createState() => _winning_historyState();
@@ -8,7 +14,7 @@ class winning_history extends StatefulWidget implements AbstractPage {
   void BuildPage() {
 //REST API calls required for your page
 
-    getwinninghistory();
+    winning_history();
 
   }
 
@@ -21,64 +27,74 @@ class _winning_historyState extends State<winning_history> {
   @override
   Widget build(BuildContext context) {
 
-    List<TableRow> CreateDynamicTableData() {
-      List<TableRow> rows = [];
-      rows.add(
-        TableRow(
-            decoration: BoxDecoration(
-                color: Theme.of(context)
-                    .accentColor // Background color for the row
-              // To alternate between dark and light shades of the row's background color.
-            ),
-            children: [
-              Column(children: [
-                Text('Patti', style: TextStyle(fontSize: 20.0), softWrap: true)
-              ]),
-              Column(children: [
-                Text('Diamond',
-                    style: TextStyle(fontSize: 20.0), softWrap: true)
-              ]),
-              Column(children: [
-                Text('Slot', style: TextStyle(fontSize: 20.0), softWrap: true)
-              ]),
-              Column(children: [
-                Text('Type', style: TextStyle(fontSize: 20.0), softWrap: true)
-              ]),
-              Column(children: [
-                Text('Reward', style: TextStyle(fontSize: 20.0), softWrap: true)
-              ])
-            ]),
-      );
-
-
-      for (int i = 0; i <= 30; i++) {
+    List<DataRow> CreateDynamicTableData(data) {
+      List<DataRow> rows = [];
+      for (int i = 0; i <= data.length - 1; i++) {
         rows.add(
-          TableRow(children: [
-            Column(children: [Text('111')]),
-            Column(children: [Text('222')]),
-            Column(children: [Text('333')]),
-            Column(children: [Text('33')]),
-            Column(children: [Text('3')])
+          DataRow(cells: [
+            DataCell(Text(data[i].slot.toString())),
+            DataCell(Text(data[i].digit3.toString())),
+            DataCell(Text(data[i].digit1.toString())),
+            DataCell(Text(data[i].created.toString())),
+            DataCell(Text(data[i].diamond.toString())),
+            DataCell(Text(data[i].type.toString())),
+            DataCell(Text(data[i].reward.toString()))
           ]),
         );
       }
       return rows;
-    };
-    final tableCreated = Table(
-        defaultColumnWidth: FixedColumnWidth(75.0),
-        border: TableBorder.all(
-            color: Colors.black, style: BorderStyle.solid, width: 2),
-        children: CreateDynamicTableData());
-    ;
+    }
     return Scaffold(
         appBar: AppBar(
-          title: Text("Hola! Winning Results are here!!!"),
-          centerTitle: true,
-          automaticallyImplyLeading: false,
-        ),
+            centerTitle: true,
+            title: Text("Winning History is here!!!",textAlign: TextAlign.center),
+            //backgroundColor: Colors.yellow,
+            automaticallyImplyLeading: false),
         body: Center(
-            child: Column(children: <Widget>[
-              Container(margin: EdgeInsets.all(10), child: tableCreated)
-            ])));
+          child: FutureBuilder(
+            future: Get_Winning_History_API(),
+            builder: (context, snapshot) {
+              if (snapshot.hasData) {
+                return Container(
+                    child: InteractiveViewer(
+                      constrained: false,
+                      child: Column(
+                        children: <Widget>[
+                          Container(
+                            margin: EdgeInsets.all(10),
+                            child: DataTable(
+                              columns: <DataColumn>[
+                                DataColumn(
+                                    label: Text('Slot', style: datacoloumn_style)),
+                                DataColumn(
+                                    label: Text('Patti', style: datacoloumn_style)),
+                                DataColumn(
+                                    label: Text('Number', style: datacoloumn_style)),
+                                DataColumn(
+                                    label:
+                                    Text('Created', style: datacoloumn_style)),
+
+                                DataColumn(
+                                    label: Text('Diamond', style: datacoloumn_style)),
+                                DataColumn(
+                                    label:
+                                    Text('Type', style: datacoloumn_style)),
+                                 DataColumn(
+                                    label:
+                                    Text('Reward', style: datacoloumn_style))
+                              ],
+                              rows: CreateDynamicTableData(snapshot.data),
+                            ),
+                          )
+                        ],
+                      ),
+                    ));
+              } else if (snapshot.hasError) {
+                return new Text(snapshot.hasError.toString());
+              }
+              return CircularProgressIndicator();
+            },
+          ),
+        ));
   }
 }

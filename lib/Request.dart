@@ -3,6 +3,7 @@ import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 import 'dart:convert';
 import 'Models/Played_History_Model.dart';
+import 'Models/Winning_History_Model.dart';
 
 
 
@@ -35,9 +36,33 @@ return false;
 }
 // -------------------------------------------------------------------WINNING History-----------------------------------------------//
 
-void getwinninghistory()
+Future<List<WinningHistoryModel>> Get_Winning_History_API()async
 {
+  var Winning_history_URL=URL+'game/win/';
 
+  final Winning_history_response = await http.get(Winning_history_URL,  headers: <String, String>{
+    'Content-Type': 'application/json; charset=UTF-8',
+    'Authorization': header_access
+  });
+  if(Winning_history_response.statusCode==200){
+    final jsonResponse = json.decode(Winning_history_response.body);
+    List<WinningHistoryModel> Winning_Hist_List=[];
+    for (var singlePlayed in jsonResponse) {
+      WinningHistoryModel Winning_History_List_result = WinningHistoryModel(
+          id: singlePlayed["id"],
+          slot: singlePlayed["slot"],
+          digit3: singlePlayed["digit3"],
+          digit1: singlePlayed["digit1"],
+          created: singlePlayed["created"],
+          diamond: singlePlayed["diamond"],
+          type: singlePlayed["type"],
+          reward: singlePlayed["reward"]);
+      Winning_Hist_List.add(Winning_History_List_result);
+    }
+    return Winning_Hist_List.reversed.toList();
+  }else{
+    return null;
+  }
 }
 // -------------------------------------------------------------------Played History-----------------------------------------------//
 
