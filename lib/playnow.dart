@@ -56,6 +56,7 @@ class _playnowState extends State<playnow> {
           borderColor: Colors.blueGrey,
           columnRatio: 0.2
       ),
+
     );
   }
 }

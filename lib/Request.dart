@@ -10,6 +10,7 @@ import 'Models/Winning_History_Model.dart';
 var access_token = "";
 var URL='http://3.16.36.128/';
 var header_access= "";
+var t_diamond = 0;
 
 // -------------------------------------------------------------------Login-----------------------------------------------//
 Future<bool> validateLogin(String _user_name, String _user_password) async {
@@ -121,9 +122,36 @@ Future<List<WinningHistoryModel>> Get_Winning_History_API()async
     return null;
   }
 }
+//------------------------------------------------------------------- Transfer Diamonds  -----------------------------------------------
+void transfer_diamond () async
+{
+
+  var t_diamond_url = URL + "/game/transfer/";
+  final t_diamond_response = await http.post(t_diamond_url, headers: <String, String>{
+  'Content-Type': 'application/json; charset=UTF-8',},
+  body: jsonEncode(<String, int>{
+    'diamond' : t_diamond,
+  }),
+  );
+
+  if (t_diamond_response.statusCode == 200)
+  {
+    Map<String, dynamic> T_diamond_response = jsonDecode(t_diamond_response.body);
+    access_token = T_diamond_response["access"];
+    header_access = "Bearer" + access_token;
+    print("Diamond successfully transferred"); }
+  else {
+
+    print("Error-Diamond");
+
+  }
+
+}
+
 
 // -------------------------------------------------------------------Reset Password-----------------------------------------------//
 
 void reset_Pwd(String a,String b){
+
 
 }
