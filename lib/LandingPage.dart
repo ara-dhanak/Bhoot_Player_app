@@ -38,7 +38,7 @@ class _bhoot_bottom_navState extends State<bhoot_bottom_nav> {
     User_get();
   }
   void User_get() {
-    setState(() async {
+    setState(()  {
       user_name=user_detail.userName.toString();
       penciler_name=user_detail.supervisorName.toString();
     });
@@ -52,7 +52,7 @@ class _bhoot_bottom_navState extends State<bhoot_bottom_nav> {
 
   @override
   Widget build(BuildContext context) {
-    User_API();
+    //User_API();
     return new Scaffold(
 
         appBar: AppBar(

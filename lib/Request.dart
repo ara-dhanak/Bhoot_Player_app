@@ -29,6 +29,7 @@ Future<bool> validateLogin(String _user_name, String _user_password) async {
     Map<String, dynamic> LoginResponse = jsonDecode(login_response.body);
     access_token = LoginResponse["access"];
     header_access="Bearer " + access_token;
+
 return true;
   } else {
 return false;
@@ -102,17 +103,19 @@ Future<List<WinningHistoryModel>> Get_Winning_History_API()async
   });
   if(user_detail_response.statusCode==200){
     final User_response = json.decode(user_detail_response.body);
+  //  for (var singleUser in User_response) {
       UserDetailModel user_detail_List_result = UserDetailModel(
-          userId: User_response["userId"].toString(),
-          userName: User_response["userName"],
-          supervisorName: User_response["supervisorName"],
-          supervisorId: User_response["supervisorId"],
-          userRole: User_response["userRole"],
-          diamond: User_response["diamond"],
-          phone: User_response["phone"],
-          lastActive: User_response["lastActive"]);
+          userId: User_response[0]["user_id"].toString(),
+          userName: User_response[0]["user_name"],
+          supervisorName: User_response[0]["supervisor_name"],
+          supervisorId: User_response[0]["supervisor_id"],
+          userRole: User_response[0]["user_role"],
+          diamond: User_response[0]["diamond"],
+          phone: User_response[0]["phone"],
+          lastActive: User_response[0]["last_active"]);
+      //debugPrint("The Loop Running"+singleUser);
+      return user_detail_List_result;
 
-    return user_detail_List_result;
    // return UserDetailModel.fromJson(jsonDecode(user_detail_response.body));
   }else{
     return null;
