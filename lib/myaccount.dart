@@ -29,9 +29,8 @@ class _myaccountState extends State<myaccount> {
         ),
         body: Center(
             child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  new Image.asset('images/goldb.png', width: 300, height: 400, alignment: Alignment.center,),
+                  new Image.asset('images/goldb.png', width: 300, height: 300, alignment: Alignment.center,),
                   ElevatedButton(
                       child: Text("Transfer Diamonds"), onPressed: () {
                     Future.delayed(Duration.zero, () =>
