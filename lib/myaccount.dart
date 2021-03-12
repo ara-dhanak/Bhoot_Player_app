@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_app/Request.dart';
 import 'package:flutter_app/ShowAlertDialog.dart';
 import 'package:flutter_app/reset_pwd.dart';
 import 'AbstractClassFactory.dart';
@@ -33,9 +34,10 @@ class _myaccountState extends State<myaccount> {
                   new Image.asset('images/goldb.png', width: 300, height: 300, alignment: Alignment.center,),
                   ElevatedButton(
                       child: Text("Transfer Diamonds"), onPressed: () {
-                    Future.delayed(Duration.zero, () =>
-                        showAlertDialog(
-                            context, "Diamonds Transfer Successful!!!"));
+                        transfer_diamond_API(context);
+                    // Future.delayed(Duration.zero, () =>
+                    //     showAlertDialog(
+                    //         context, "Diamonds Transfer Successful!!!, Remaining Diamonds $remaining_diamond"));
                   }
                   ),
                   //Need to create a function in buildpage so onPress will b trigere

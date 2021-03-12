@@ -1,16 +1,19 @@
+
 import 'package:flutter_app/Models/User_Detail_Model.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 import 'dart:convert';
 import 'Models/Played_History_Model.dart';
 import 'Models/Winning_History_Model.dart';
+import 'ShowAlertDialog.dart';
 
 
 
 var access_token = "";
 var URL='http://3.16.36.128/';
 var header_access= "";
-var t_diamond = 0;
+var transfer_diamond;
+var remaining_diamond;
 
 // -------------------------------------------------------------------Login-----------------------------------------------//
 Future<bool> validateLogin(String _user_name, String _user_password) async {
@@ -29,6 +32,7 @@ Future<bool> validateLogin(String _user_name, String _user_password) async {
   if (login_response.statusCode == 200) {
     Map<String, dynamic> LoginResponse = jsonDecode(login_response.body);
     access_token = LoginResponse["access"];
+
     header_access="Bearer " + access_token;
 
 return true;
@@ -115,6 +119,10 @@ Future<List<WinningHistoryModel>> Get_Winning_History_API()async
           phone: User_response[0]["phone"],
           lastActive: User_response[0]["last_active"]);
       //debugPrint("The Loop Running"+singleUser);
+
+    //Updating user diamond value
+    transfer_diamond = User_response[0]["diamond"];
+
       return user_detail_List_result;
 
    // return UserDetailModel.fromJson(jsonDecode(user_detail_response.body));
@@ -123,35 +131,39 @@ Future<List<WinningHistoryModel>> Get_Winning_History_API()async
   }
 }
 //------------------------------------------------------------------- Transfer Diamonds  -----------------------------------------------
-void transfer_diamond () async
+void transfer_diamond_API (BuildContext context) async
 {
 
-  var t_diamond_url = URL + "/game/transfer/";
-  final t_diamond_response = await http.post(t_diamond_url, headers: <String, String>{
-  'Content-Type': 'application/json; charset=UTF-8',},
+  var transfer_diamond_url = URL + "game/transfer/";
+  final transfer_diamond_response = await http.post(transfer_diamond_url, headers: <String, String>{
+  'Content-Type': 'application/json; charset=UTF-8','Authorization': header_access},
   body: jsonEncode(<String, int>{
-    'diamond' : t_diamond,
+    'diamond' : transfer_diamond,
   }),
   );
 
-  if (t_diamond_response.statusCode == 200)
+print(transfer_diamond_url);
+print(transfer_diamond_response);
+  if (transfer_diamond_response.statusCode == 200)
   {
-    Map<String, dynamic> T_diamond_response = jsonDecode(t_diamond_response.body);
-    access_token = T_diamond_response["access"];
-    header_access = "Bearer" + access_token;
+    Map<String, dynamic> Transfer_diamond_result = jsonDecode(transfer_diamond_response.body);
+
+    remaining_diamond = Transfer_diamond_result["diamond"];
+
+ //Changes of dynamic diamond value
+    Future.delayed(
+        Duration.zero, () => showAlertDialog(context, "$transfer_diamond Diamonds Successfully transferred! You have remaining $remaining_diamond diamonds in account"));
+
     print("Diamond successfully transferred"); }
   else {
-
     print("Error-Diamond");
-
   }
-
 }
-
 
 // -------------------------------------------------------------------Reset Password-----------------------------------------------//
 
-void reset_Pwd(String a,String b){
+void reset_Pwd(String a,String b)
+{
 
 
 }
