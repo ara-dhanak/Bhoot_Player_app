@@ -36,7 +36,7 @@ class _bhoot_bottom_navState extends State<bhoot_bottom_nav> {
   }
 
   Future<UserDetailModel> User_API() async {
-    user_detail = await User_Detail_API();
+    user_detail = await User_Detail_API(context);
   }
 
   @override

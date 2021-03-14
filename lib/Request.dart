@@ -1,4 +1,3 @@
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_app/Models/User_Detail_Model.dart';
 import 'package:http/http.dart' as http;
@@ -8,11 +7,11 @@ import 'Models/Winning_History_Model.dart';
 import 'ShowAlertDialog.dart';
 
 var access_token = "";
-var URL='http://3.16.36.128/';
-var header_access= "";
+var URL = 'http://3.16.36.128/';
+var header_access = "";
 var transfer_diamond;
 var remaining_diamond;
-
+Map<String, dynamic> Global_User_Details = {};
 
 // -------------------------------------------------------------------Login-----------------------------------------------//
 Future<bool> validateLogin(String _user_name, String _user_password) async {
@@ -32,8 +31,7 @@ Future<bool> validateLogin(String _user_name, String _user_password) async {
     Map<String, dynamic> LoginResponse = jsonDecode(login_response.body);
     access_token = LoginResponse["access"];
 
-    header_access="Bearer " + access_token;
-
+    header_access = "Bearer " + access_token;
 
     return true;
   } else {
@@ -99,22 +97,20 @@ Future<List<PlayedHistoryModel>> Played_history_API() async {
     return null;
   }
 }
+
 // -------------------------------------------------------------------User Details-----------------------------------------------//
-Map<String, dynamic> Global_User_Details = {
 
-};
-
-Future User_Detail_API() async {
-  var user_detail_URL = URL + 'accounts/user_details/';
-  final user_detail_response =
-      await http.get(user_detail_URL, headers: <String, String>{
-    'Content-Type': 'application/json; charset=UTF-8',
-    'Authorization': header_access
-  });
-  if (user_detail_response.statusCode == 200) {
-    final User_response = json.decode(user_detail_response.body);
-
-       UserDetailModel user_detail_List_result = UserDetailModel(
+Future User_Detail_API(BuildContext context) async {
+  try {
+    var user_detail_URL = URL + 'accounts/user_details/';
+    final user_detail_response =
+        await http.get(user_detail_URL, headers: <String, String>{
+      'Content-Type': 'application/json; charset=UTF-8',
+      'Authorization': header_access
+    });
+    if (user_detail_response.statusCode == 200) {
+      final User_response = json.decode(user_detail_response.body);
+      UserDetailModel user_detail_List_result = UserDetailModel(
           userId: User_response[0]["user_id"].toString(),
           userName: User_response[0]["user_name"],
           supervisorName: User_response[0]["supervisor_name"],
@@ -125,64 +121,56 @@ Future User_Detail_API() async {
           lastActive: User_response[0]["last_active"]);
       //debugPrint("The Loop Running"+singleUser);
 
-    Global_User_Details["user_name"]=user_detail_List_result.userName;
-    Global_User_Details["supervisorName"]=user_detail_List_result.supervisorName;
-    Global_User_Details["diamond"]=user_detail_List_result.diamond;
-    return user_detail_List_result;
-
-    //Updating user diamond value
-    transfer_diamond = User_response[0]["diamond"];
-
+      Global_User_Details["user_name"] = user_detail_List_result.userName;
+      Global_User_Details["supervisorName"] = user_detail_List_result.supervisorName;
+      Global_User_Details["diamond"] = user_detail_List_result.diamond;
       return user_detail_List_result;
 
-   // return UserDetailModel.fromJson(jsonDecode(user_detail_response.body));
+      //debugPrint("The Loop Running"+singleUser);
 
-
-
-    //debugPrint("The Loop Running"+singleUser);
-
-  } else {
-    return null;
+    } else {
+      return null;
+    }
+  } catch (e) {
+    Future.delayed(Duration.zero,
+            () => showAlertDialog(context, "Error while fetching User Details!"));
   }
 }
-//------------------------------------------------------------------- Transfer Diamonds  -----------------------------------------------
-void transfer_diamond_API (BuildContext context) async
-{
 
+//------------------------------------------------------------------- Transfer Diamonds  -----------------------------------------------
+void transfer_diamond_API(BuildContext context) async {
   var transfer_diamond_url = URL + "game/transfer/";
-  final transfer_diamond_response = await http.post(transfer_diamond_url, headers: <String, String>{
-  'Content-Type': 'application/json; charset=UTF-8','Authorization': header_access},
-  body: jsonEncode(<String, int>{
-    'diamond' : Global_User_Details["diamond"],// change variable name
-  }),
+  final transfer_diamond_response = await http.post(
+    transfer_diamond_url,
+    headers: <String, String>{
+      'Content-Type': 'application/json; charset=UTF-8',
+      'Authorization': header_access
+    },
+    body: jsonEncode(<String, int>{
+      'diamond': Global_User_Details["diamond"], // change variable name
+    }),
   );
 
-print(transfer_diamond_url);
-print(transfer_diamond_response);
-  if (transfer_diamond_response.statusCode == 200)
-  {
-    Map<String, dynamic> Transfer_diamond_result = jsonDecode(transfer_diamond_response.body);
+  //print(transfer_diamond_url);
+ // print(transfer_diamond_response);
+  if (transfer_diamond_response.statusCode == 200) {
+    Map<String, dynamic> Transfer_diamond_result =
+        jsonDecode(transfer_diamond_response.body);
 
     remaining_diamond = Transfer_diamond_result["diamond"];
 
- //Changes of dynamic diamond value
-    Future.delayed(
-        Duration.zero, () => showAlertDialog(context, "Diamonds Successfully transferred!"));
+    //Changes of dynamic diamond value
+    Future.delayed(Duration.zero,
+        () => showAlertDialog(context, "Diamonds Successfully transferred!"));
 
-    print("Diamond successfully transferred"); }
-  else {
-    print("Error-Diamond");
+    //print("Diamond successfully transferred");
+  } else {
+    //print("Error-Diamond");
   }
 }
 
 // -------------------------------------------------------------------Reset Password-----------------------------------------------//
-void reset_Pwd(String a, String b)
-{
-
-}
+void reset_Pwd(String a, String b) {}
 // -------------------------------------------------------------------Playnow Submit API-----------------------------------------------//
 
-void submit()
-{
-
-}
+void submit() {}

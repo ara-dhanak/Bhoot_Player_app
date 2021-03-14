@@ -27,14 +27,14 @@ I found this from https://medium.com/flutter-community/package-visibility-for-ur
 
 launchURL() async {
   try {
-    const url = 'https://flutter.dev';
+    const url = 'http://pradhanaukri.co.in/';
     if (await canLaunch(url)) {
       await launch(url, forceWebView: true);
     } else {
-      throw 'Madhu Error Loading BhootNath Result Page $url';
+      throw 'Error while Loading BhootNath Result Page $url';
     }
   } catch (e) {
-    print(e.toString());
+    //print(e.toString());
   }
 }
 
@@ -57,7 +57,7 @@ class _game_historyState extends State<game_history> {
           Image.asset(
             'images/goldb.png',
             width: 300,
-            height: 200,
+            height: 300,
             alignment: Alignment.center,
           ),
           ElevatedButton(
@@ -65,7 +65,7 @@ class _game_historyState extends State<game_history> {
               child: Text('Bhootnath Result '),
               style: ButtonStyle(
                   backgroundColor:
-                      MaterialStateProperty.all(Colors.lightBlueAccent)))
+                      MaterialStateProperty.all(Colors.green)))
         ])));
   }
 }
