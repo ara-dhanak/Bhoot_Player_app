@@ -19,8 +19,6 @@ class LoginPage   extends StatefulWidget{
 }
 
 class LoginPage_State extends State<LoginPage> {
-
-
   void LoginState() {
     setState(() {
 

@@ -7,7 +7,6 @@ class bhoot_bottom_nav extends StatefulWidget {
   @override
   _bhoot_bottom_navState createState() => _bhoot_bottom_navState();
 }
-
 class _bhoot_bottom_navState extends State<bhoot_bottom_nav> {
   String user_name = "Guest";
   String penciler_name = "Imran";

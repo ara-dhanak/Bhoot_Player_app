@@ -1,12 +1,18 @@
+
+import 'package:flutter/cupertino.dart';
 import 'package:flutter_app/Models/User_Detail_Model.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'Models/Played_History_Model.dart';
 import 'Models/Winning_History_Model.dart';
+import 'ShowAlertDialog.dart';
 
 var access_token = "";
-var URL = 'http://3.16.36.128/';
-var header_access = "";
+var URL='http://3.16.36.128/';
+var header_access= "";
+var transfer_diamond;
+var remaining_diamond;
+
 
 // -------------------------------------------------------------------Login-----------------------------------------------//
 Future<bool> validateLogin(String _user_name, String _user_password) async {
@@ -25,7 +31,9 @@ Future<bool> validateLogin(String _user_name, String _user_password) async {
   if (login_response.statusCode == 200) {
     Map<String, dynamic> LoginResponse = jsonDecode(login_response.body);
     access_token = LoginResponse["access"];
-    header_access = "Bearer " + access_token;
+
+    header_access="Bearer " + access_token;
+
 
     return true;
   } else {
@@ -105,26 +113,70 @@ Future User_Detail_API() async {
   });
   if (user_detail_response.statusCode == 200) {
     final User_response = json.decode(user_detail_response.body);
-    //  for (var singleUser in User_response) {
-    UserDetailModel user_detail_List_result = UserDetailModel(
-        userId: User_response[0]["user_id"].toString(),
-        userName: User_response[0]["user_name"],
-        supervisorName: User_response[0]["supervisor_name"],
-        supervisorId: User_response[0]["supervisor_id"],
-        userRole: User_response[0]["user_role"],
-        diamond: User_response[0]["diamond"],
-        phone: User_response[0]["phone"],
-        lastActive: User_response[0]["last_active"]);
-    //debugPrint("The Loop Running"+singleUser);
+
+       UserDetailModel user_detail_List_result = UserDetailModel(
+          userId: User_response[0]["user_id"].toString(),
+          userName: User_response[0]["user_name"],
+          supervisorName: User_response[0]["supervisor_name"],
+          supervisorId: User_response[0]["supervisor_id"],
+          userRole: User_response[0]["user_role"],
+          diamond: User_response[0]["diamond"],
+          phone: User_response[0]["phone"],
+          lastActive: User_response[0]["last_active"]);
+      //debugPrint("The Loop Running"+singleUser);
+
     Global_User_Details["user_name"]=user_detail_List_result.userName;
     Global_User_Details["supervisorName"]=user_detail_List_result.supervisorName;
     Global_User_Details["diamond"]=user_detail_List_result.diamond;
     return user_detail_List_result;
+
+    //Updating user diamond value
+    transfer_diamond = User_response[0]["diamond"];
+
+      return user_detail_List_result;
+
+   // return UserDetailModel.fromJson(jsonDecode(user_detail_response.body));
+
+
+
+    //debugPrint("The Loop Running"+singleUser);
+
   } else {
     return null;
   }
 }
+//------------------------------------------------------------------- Transfer Diamonds  -----------------------------------------------
+void transfer_diamond_API (BuildContext context) async
+{
+
+  var transfer_diamond_url = URL + "game/transfer/";
+  final transfer_diamond_response = await http.post(transfer_diamond_url, headers: <String, String>{
+  'Content-Type': 'application/json; charset=UTF-8','Authorization': header_access},
+  body: jsonEncode(<String, int>{
+    'diamond' : transfer_diamond,// change variable name
+  }),
+  );
+
+print(transfer_diamond_url);
+print(transfer_diamond_response);
+  if (transfer_diamond_response.statusCode == 200)
+  {
+    Map<String, dynamic> Transfer_diamond_result = jsonDecode(transfer_diamond_response.body);
+
+    remaining_diamond = Transfer_diamond_result["diamond"];
+
+ //Changes of dynamic diamond value
+    Future.delayed(
+        Duration.zero, () => showAlertDialog(context, "$transfer_diamond Diamonds Successfully transferred! You have remaining $remaining_diamond diamonds in account"));
+
+    print("Diamond successfully transferred"); }
+  else {
+    print("Error-Diamond");
+  }
+}
 
 // -------------------------------------------------------------------Reset Password-----------------------------------------------//
+void reset_Pwd(String a, String b)
+{
 
-void reset_Pwd(String a, String b) {}
+}
