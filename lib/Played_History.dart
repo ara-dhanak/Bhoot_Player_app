@@ -12,13 +12,13 @@ class Played_History extends StatefulWidget implements AbstractPage {
   _Played_HistoryState createState() => _Played_HistoryState();
 
   void BuildPage() async {
-    Played_History();
   }
 }
 
 class _Played_HistoryState extends State<Played_History> {
   @override
   Widget build(BuildContext context) {
+    //print("The temp user details are"+Global_User_Details["user_name"]);
 
     List<DataRow> CreateDynamicTableData(data) {
       List<DataRow> rows = [];
@@ -40,12 +40,12 @@ class _Played_HistoryState extends State<Played_History> {
     return Scaffold(
         appBar: AppBar(
             centerTitle: true,
-            title: Text("Player History is here!!!",textAlign: TextAlign.center),
+            title: Text("Player History is here!!! ",textAlign: TextAlign.center),
             //backgroundColor: Colors.yellow,
             automaticallyImplyLeading: false),
         body: Center(
           child: FutureBuilder(
-            future: Played_history_API(),
+            future:Played_history_API(),
             builder: (context, snapshot) {
               if (snapshot.hasData) {
                 return Container(

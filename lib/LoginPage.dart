@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_app/game_history.dart';
+import 'Models/User_Detail_Model.dart';
 import "ShowAlertDialog.dart";
 import "Request.dart";
 import 'LandingPage.dart';
@@ -18,8 +19,6 @@ class LoginPage   extends StatefulWidget{
 }
 
 class LoginPage_State extends State<LoginPage> {
-
-
   void LoginState() {
     setState(() {
 
@@ -68,6 +67,7 @@ class LoginPage_State extends State<LoginPage> {
             //print ('The Result is -'+ result.toString());
             if (result)
               {
+                UserDetailModel user_detail=await User_Detail_API();//this call for the first tme login subsequent calls happening in landing page
                 Navigator.push(
                     context,MaterialPageRoute(builder: (context) => bhoot_bottom_nav()));
               }

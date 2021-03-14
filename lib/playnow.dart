@@ -7,8 +7,8 @@ import 'AbstractClassFactory.dart';
 final _editableKey = GlobalKey<EditableState>();
 List cols = [
   {"title": 'Serial No', 'widthFactor': 0.2, 'key': 'Sno'},
-  {"title": 'Patti', 'widthFactor': 0.1, 'key': 'Patti'},
-  {"title": 'Single', 'widthFactor': 0.1, 'key': 'Single'},
+  {"title": 'Patti', 'widthFactor': 0.2, 'key': 'Patti'},
+  {"title": 'Single', 'widthFactor': 0.2, 'key': 'Single'},
   {"title": 'Diamonds', 'key': 'Diamonds'},
 ];
 List rows = [];
@@ -23,7 +23,6 @@ class playnow extends StatefulWidget implements AbstractPage {
 }
 
 class _playnowState extends State<playnow> {
-
   void _addnewRow() {
     setState(() {
       _editableKey.currentState.createRow();
@@ -33,6 +32,26 @@ class _playnowState extends State<playnow> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+<<<<<<< Updated upstream
+        appBar: AppBar(
+          title: Text(" Lets Play Beyond Reality!!! "),
+          centerTitle: true,
+          automaticallyImplyLeading: false,
+          actions: <Widget>[
+            FlatButton(
+              textColor: Colors.white,
+              onPressed: () {
+                _addnewRow();
+              },
+              child: Text(
+                "Add",
+              ),
+              shape: CircleBorder(side: BorderSide(color: Colors.transparent)),
+            ),
+          ],
+        ),
+        body: Center(
+=======
       appBar: AppBar(
         title: Text(" Lets Play Beyond Reality!!! "),
         centerTitle: true,
@@ -46,7 +65,8 @@ class _playnowState extends State<playnow> {
           ),
         ],
       ),
-      body: Editable(
+      body:
+      Editable(
           key: _editableKey,
           //Assign Key to Widget
           columns: cols,
@@ -56,6 +76,17 @@ class _playnowState extends State<playnow> {
           borderColor: Colors.blueGrey,
           columnRatio: 0.2
       ),
-    );
+>>>>>>> Stashed changes
+
+          child: Editable(
+              key: _editableKey,
+              //Assign Key to Widget
+              columns: cols,
+              rows: rows,
+              zebraStripe: true,
+              stripeColor2: Colors.grey[200],
+              borderColor: Colors.blueGrey,
+              columnRatio: 0.2),
+        ));
   }
 }
