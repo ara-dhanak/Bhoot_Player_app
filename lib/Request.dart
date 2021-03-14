@@ -153,7 +153,7 @@ void transfer_diamond_API (BuildContext context) async
   final transfer_diamond_response = await http.post(transfer_diamond_url, headers: <String, String>{
   'Content-Type': 'application/json; charset=UTF-8','Authorization': header_access},
   body: jsonEncode(<String, int>{
-    'diamond' : transfer_diamond,// change variable name
+    'diamond' : Global_User_Details["diamond"],// change variable name
   }),
   );
 
@@ -167,7 +167,7 @@ print(transfer_diamond_response);
 
  //Changes of dynamic diamond value
     Future.delayed(
-        Duration.zero, () => showAlertDialog(context, "$transfer_diamond Diamonds Successfully transferred! You have remaining $remaining_diamond diamonds in account"));
+        Duration.zero, () => showAlertDialog(context, "Diamonds Successfully transferred!"));
 
     print("Diamond successfully transferred"); }
   else {
@@ -177,6 +177,12 @@ print(transfer_diamond_response);
 
 // -------------------------------------------------------------------Reset Password-----------------------------------------------//
 void reset_Pwd(String a, String b)
+{
+
+}
+// -------------------------------------------------------------------Playnow Submit API-----------------------------------------------//
+
+void submit()
 {
 
 }
