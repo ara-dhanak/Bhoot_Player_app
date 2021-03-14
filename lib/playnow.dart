@@ -32,7 +32,6 @@ class _playnowState extends State<playnow> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-<<<<<<< Updated upstream
         appBar: AppBar(
           title: Text(" Lets Play Beyond Reality!!! "),
           centerTitle: true,
@@ -51,33 +50,6 @@ class _playnowState extends State<playnow> {
           ],
         ),
         body: Center(
-=======
-      appBar: AppBar(
-        title: Text(" Lets Play Beyond Reality!!! "),
-        centerTitle: true,
-        automaticallyImplyLeading: false,
-        actions: <Widget>[
-          FlatButton(
-            textColor: Colors.white,
-            onPressed: () {_addnewRow();},
-            child: Text("Add",),
-            shape: CircleBorder(side: BorderSide(color: Colors.transparent)),
-          ),
-        ],
-      ),
-      body:
-      Editable(
-          key: _editableKey,
-          //Assign Key to Widget
-          columns: cols,
-          rows: rows,
-          zebraStripe: true,
-          stripeColor2: Colors.grey[200],
-          borderColor: Colors.blueGrey,
-          columnRatio: 0.2
-      ),
->>>>>>> Stashed changes
-
           child: Editable(
               key: _editableKey,
               //Assign Key to Widget
