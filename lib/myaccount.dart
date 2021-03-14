@@ -48,10 +48,7 @@ class _myaccountState extends State<myaccount> {
                               Colors.green)
                       ),
                        onPressed: () { Navigator.push(context, MaterialPageRoute(builder: (context) => reset_password()));
-
                       }
-
-
                   ),
                 ]
             )
