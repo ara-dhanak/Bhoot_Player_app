@@ -53,14 +53,13 @@ class _game_historyState extends State<game_history> {
           automaticallyImplyLeading: false,
         ),
         body: Center(
-            child: Column(children: <Widget>[
-          Expanded(
-              child: Image.asset(
+            child: Column(children: [
+          Image.asset(
             'images/goldb.png',
             width: 300,
             height: 200,
             alignment: Alignment.center,
-          )),
+          ),
           ElevatedButton(
               onPressed: BuildPage,
               child: Text('Bhootnath Result '),
