@@ -25,6 +25,10 @@ class _bhoot_bottom_navState extends State<bhoot_bottom_nav> {
 //We have to create the page on demand . No need to create the concrete objects of all the objects  on 2nd page
 
   void ontouchedbar(int index) {
+    if (index==5)
+    {
+      Navigator.pop(context);
+    }
     setState(() {
       User_API();
       _currentpage = _children[index];
@@ -76,23 +80,32 @@ class _bhoot_bottom_navState extends State<bhoot_bottom_nav> {
               BottomNavigationBarItem(
                   icon: new Icon(Icons.history),
                   backgroundColor: Colors.blueAccent,
-                  label: "Game History"),
+                  label: "Game \nHistory"),
+              //label: "Game History"
               BottomNavigationBarItem(
                   icon: new Icon(Icons.play_arrow),
                   backgroundColor: Colors.blueAccent,
-                  label: "Play"),
+                  label: "Play \nNow"),
+              //label: "Play"
               BottomNavigationBarItem(
                   icon: new Icon(Icons.card_giftcard),
                   backgroundColor: Colors.blueAccent,
-                  label: "Winners"),
+                  label: "Winning \n History"),
+              //label: "Winners"
               BottomNavigationBarItem(
                   icon: new Icon(Icons.games),
                   backgroundColor: Colors.blueAccent,
-                  label: "Played History"),
+                  label: "Played \nHistory"),
+              //label: "Played History"
               BottomNavigationBarItem(
                   icon: Icon(Icons.person_pin_rounded),
                   backgroundColor: Colors.blueAccent,
-                  label: "MyAccount")
+                  label: "MyAccount \n    Details"),
+              //label: "MyAccount"
+              BottomNavigationBarItem(
+                  icon: Icon(Icons.logout),
+                  backgroundColor: Colors.blueAccent,
+                  label: "Logout")
             ]));
   }
 }
