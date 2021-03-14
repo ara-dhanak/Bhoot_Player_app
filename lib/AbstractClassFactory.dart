@@ -41,7 +41,7 @@ abstract class AbstractPage extends StatefulWidget {
         return page4;
 
       case PageNumber.LogOut:
-        return logOut();
+        return null;
 
       default:
         return null;
