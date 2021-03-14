@@ -35,9 +35,6 @@ class _myaccountState extends State<myaccount> {
                   ElevatedButton(
                       child: Text("Transfer Diamonds"), onPressed: () {
                         transfer_diamond_API(context);
-                    // Future.delayed(Duration.zero, () =>
-                    //     showAlertDialog(
-                    //         context, "Diamonds Transfer Successful!!!, Remaining Diamonds $remaining_diamond"));
                   }
                   ),
                   //Need to create a function in buildpage so onPress will b trigere
