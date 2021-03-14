@@ -2,7 +2,6 @@ import 'package:editable/editable.dart';
 import 'package:flutter/material.dart';
 
 import 'AbstractClassFactory.dart';
-
 /// Create a Key for EditableState
 final _editableKey = GlobalKey<EditableState>();
 List cols = [
@@ -12,7 +11,6 @@ List cols = [
   {"title": 'Diamonds', 'key': 'Diamonds'},
 ];
 List rows = [];
-
 class playnow extends StatefulWidget implements AbstractPage {
   @override
   _playnowState createState() => _playnowState();
@@ -23,15 +21,19 @@ class playnow extends StatefulWidget implements AbstractPage {
 }
 
 class _playnowState extends State<playnow> {
+
   void _addnewRow() {
     setState(() {
       _editableKey.currentState.createRow();
     });
-  }
+    
+    void submit() {
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
+    }
+
+    @override
+    Widget build(BuildContext context) {
+      return Scaffold(
         appBar: AppBar(
           title: Text(" Lets Play Beyond Reality!!! "),
           centerTitle: true,
@@ -47,9 +49,34 @@ class _playnowState extends State<playnow> {
               ),
               shape: CircleBorder(side: BorderSide(color: Colors.transparent)),
             ),
+            FlatButton(
+              textColor: Colors.white,
+              onPressed: () {
+                submit();
+              },
+              child: Text(
+                "Submit",
+              ),
+              shape: CircleBorder(side: BorderSide(color: Colors.transparent)),
+            ),
+
+
           ],
         ),
+
+
+        //   bottomNavigationBar: BottomNavigationBar(
+        //       currentIndex: 0,
+        //     type: BottomNavigationBarType.fixed,
+        //    // onTap:  Navigator.push(context, MaterialPageRoute(builder: (context) => submit()),
+        //       items: [
+        //   BottomNavigationBarItem(icon:new Icon(Icons.arrow_circle_up_rounded),backgroundColor: Colors.white, label: "Submit"
+        //   ),  ],
+        // ),
+
+
         body: Center(
+
           child: Editable(
               key: _editableKey,
               //Assign Key to Widget
@@ -59,6 +86,9 @@ class _playnowState extends State<playnow> {
               stripeColor2: Colors.grey[200],
               borderColor: Colors.blueGrey,
               columnRatio: 0.2),
-        ));
+        ),
+      );
+    }
   }
-}
+
+
